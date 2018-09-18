@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\Board15\Board15\bin\Debug\Board15.dll
+C:\Users\User\source\repos\Board15\Board15\bin\Debug\Board15.pdb
+C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.dll
+C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.pdb

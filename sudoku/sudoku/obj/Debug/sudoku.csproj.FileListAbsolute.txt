@@ -1,0 +1,14 @@
+C:\Users\prakt03\Desktop\sudoku\sudoku\bin\Debug\sudoku.exe.config
+C:\Users\prakt03\Desktop\sudoku\sudoku\bin\Debug\sudoku.exe
+C:\Users\prakt03\Desktop\sudoku\sudoku\bin\Debug\sudoku.pdb
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku.csprojResolveAssemblyReference.cache
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\MainWindow.g.cs
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\App.g.cs
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku_MarkupCompile.cache
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku_MarkupCompile.lref
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\MainWindow.baml
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku.g.resources
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku.Properties.Resources.resources
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku.csproj.GenerateResource.Cache
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku.exe
+C:\Users\prakt03\Desktop\sudoku\sudoku\obj\Debug\sudoku.pdb

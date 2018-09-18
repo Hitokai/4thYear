@@ -1,0 +1,5 @@
+C:\Users\prakt03\Desktop\test\ELW.Library.Math\bin\Debug\ELW.Library.Math.dll
+C:\Users\prakt03\Desktop\test\ELW.Library.Math\bin\Debug\ELW.Library.Math.pdb
+C:\Users\prakt03\Desktop\test\ELW.Library.Math\obj\Debug\ELW.Library.Math.csprojResolveAssemblyReference.cache
+C:\Users\prakt03\Desktop\test\ELW.Library.Math\obj\Debug\ELW.Library.Math.dll
+C:\Users\prakt03\Desktop\test\ELW.Library.Math\obj\Debug\ELW.Library.Math.pdb
