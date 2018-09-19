@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>39Mq6WVPVa4IIaWTn82xXmgdJSz9JKRiiHb+3l7P4kg=</dsig:DigestValue>
+        <dsig:DigestValue>vobOHgSfw6WMQUGhp/bkyBkWI8ZDDmejEunmMOEIPQ8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinGame15.exe" size="13824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinGame15.exe" size="232448">
       <assemblyIdentity name="WinGame15" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Mal3qc5orZPJeDsLP6EaJj+BexfuFNViyGAiVdXSpJ0=</dsig:DigestValue>
+        <dsig:DigestValue>XfBPi/asDoNowRpZYC2+kNeIj/gzN4vw6sUVY8HUp+g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

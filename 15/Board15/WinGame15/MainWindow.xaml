@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="15" Height="606.976" Width="370.93" WindowStartupLocation="CenterScreen" MinWidth="370.93" MinHeight="606.976" MaxWidth="370.93" MaxHeight="606.976">
     <Grid>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="576" VerticalAlignment="Top" Width="363" OpacityMask="#FFD62B2B" UseLayoutRounding="False" Stretch="Fill" Source="C:\Users\User\Downloads\bg.jpg"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="576" VerticalAlignment="Top" Width="363" UseLayoutRounding="False" Stretch="Fill" Source="res/bg.jpg" OpacityMask="Black"/>
 
         <Button x:Name="btn00" Content="B" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="80" Height="80" FontFamily="Aldrich [RUS by Daymarius]" FontSize="34" FontWeight="Bold" Click="btnClick" Background="#FFC1D34E"/>
         <Button x:Name="btn10" Content="B" HorizontalAlignment="Left" Margin="95,92,0,0" VerticalAlignment="Top" Width="80" Height="80" FontFamily="Aldrich [RUS by Daymarius]" FontSize="34" FontWeight="Bold" Click="btnClick" Background="#FFC1D34E"/>
