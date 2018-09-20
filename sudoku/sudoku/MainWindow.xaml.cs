@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static sudoku.sudokuAlg;
 
 namespace sudoku
 {
@@ -33,13 +34,15 @@ namespace sudoku
 
         private void btnCreate(object sender, RoutedEventArgs e)
         {
+            Init(ref grid);
+            Update(ref grid);
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
                     Button button = new Button();
                     button.Name = "btn" + i.ToString() + j.ToString();
-                    button.Content = i.ToString() + j.ToString();
+                    button.Content = grid[i, j].ToString();
                     button.Click += button_Click;
                     button.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.2 };
                     gridBut.Children.Add(button);
@@ -48,6 +51,18 @@ namespace sudoku
                 }
             }
             btnStart.IsEnabled = false;
+
+        }
+
+        public static void Numbers(ref int[,] grid)
+        {
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    s += grid[x, y].ToString() + " ";
+                }
+            }
         }
     }
 }
