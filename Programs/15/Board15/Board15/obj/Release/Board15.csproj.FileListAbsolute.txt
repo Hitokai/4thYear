@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\Board15\Board15\bin\Release\Board15.dll
+C:\Users\User\source\repos\Board15\Board15\bin\Release\Board15.pdb
+C:\Users\User\source\repos\Board15\Board15\obj\Release\Board15.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Board15\Board15\obj\Release\Board15.dll
+C:\Users\User\source\repos\Board15\Board15\obj\Release\Board15.pdb
+C:\Users\User\source\repos\Board15\Board15\obj\Release\Board15.csprojAssemblyReference.cache
+A:\MyGoogleDrive\4 курс\Aref\15\Board15\Board15\bin\Release\Board15.dll
+A:\MyGoogleDrive\4 курс\Aref\15\Board15\Board15\bin\Release\Board15.pdb
+A:\MyGoogleDrive\4 курс\Aref\15\Board15\Board15\obj\Release\Board15.csprojAssemblyReference.cache
+A:\MyGoogleDrive\4 курс\Aref\15\Board15\Board15\obj\Release\Board15.csproj.CoreCompileInputs.cache
+A:\MyGoogleDrive\4 курс\Aref\15\Board15\Board15\obj\Release\Board15.dll
+A:\MyGoogleDrive\4 курс\Aref\15\Board15\Board15\obj\Release\Board15.pdb
