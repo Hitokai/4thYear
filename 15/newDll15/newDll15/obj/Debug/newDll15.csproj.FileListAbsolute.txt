@@ -1,6 +1,0 @@
-C:\Users\User\source\repos\newDll15\newDll15\bin\Debug\newDll15.dll
-C:\Users\User\source\repos\newDll15\newDll15\bin\Debug\newDll15.pdb
-C:\Users\User\source\repos\newDll15\newDll15\obj\Debug\newDll15.csprojAssemblyReference.cache
-C:\Users\User\source\repos\newDll15\newDll15\obj\Debug\newDll15.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\newDll15\newDll15\obj\Debug\newDll15.dll
-C:\Users\User\source\repos\newDll15\newDll15\obj\Debug\newDll15.pdb
