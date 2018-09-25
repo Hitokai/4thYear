@@ -10,9 +10,8 @@ namespace sudoku
     class sudokuAlg
     {
         public static int[,] grid = new int[9, 9];
-        public static string s;
 
-        public static void Init(ref int[,] grid)
+        public static void init(int[,] grid)
         // Заполнение массива цифрами по формуле
         // Формула постоянно сдвигает цифры на следующей строке на насколько позиций
         {
@@ -25,7 +24,7 @@ namespace sudoku
             }
         }
 
-        static void ChangeTwoCell(ref int[,] grid, int findValue1, int findValue2)
+        static void changeTwoCell(int[,] grid, int findValue1, int findValue2)
         // Обмен местами двух чисел
         {
             int xParam1, yParam1, xParam2, yParam2;
@@ -59,7 +58,7 @@ namespace sudoku
             }
         }
 
-        public static void Update(ref int[,] grid)
+        public static void update(int[,] grid)
         // Перемешивание чисел в таблице
         {
             Random shuffleLevel = new Random(); // Кол-во перемешиваний
@@ -68,7 +67,7 @@ namespace sudoku
                 // Без параметра Guid.NewGuid().GetHashCode() в таблице всё заполняется одинаковыми цифрами
                 Random rand = new Random(Guid.NewGuid().GetHashCode());
                 Random rand2 = new Random(Guid.NewGuid().GetHashCode());
-                ChangeTwoCell(ref grid, rand.Next(1, 10), rand2.Next(1, 10)); // Обмен местами двух чисел
+                changeTwoCell(grid, rand.Next(1, 10), rand2.Next(1, 10)); // Обмен местами двух чисел
             }
         }
     }
