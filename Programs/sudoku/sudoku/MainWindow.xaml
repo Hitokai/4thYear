@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sudoku"
         mc:Ignorable="d"
-        Title="MainWindow" Height="739.895" Width="582.797">
+        Title="MainWindow" Height="689.68" Width="582.797">
     <Grid Margin="0,0,2,0">
         <Grid x:Name="gridBut" HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="550" Margin="10,10,0,0">
             <Grid.RowDefinitions>
@@ -36,7 +36,7 @@
             <Frame x:Name="frame_Copy2" Grid.ColumnSpan="3" Content="&#xA;" HorizontalAlignment="Left" Height="184" Grid.RowSpan="4" VerticalAlignment="Top" Width="184" Foreground="#7F000000" Background="#3F000000" Margin="-1,60,0,0" Grid.Row="5"/>
             <Frame x:Name="frame_Copy3" Grid.ColumnSpan="3" Content="&#xA;" HorizontalAlignment="Left" Height="184" Grid.RowSpan="3" VerticalAlignment="Top" Width="184" Foreground="#7F000000" Background="#3F000000" Grid.Column="6" Margin="0,0,-1,-1" Grid.Row="6"/>
         </Grid>
-        <Button x:Name="btnStart" Content="Начать игру" HorizontalAlignment="Left" Margin="105,647,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate"/>
-        <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="278,602,0,0" VerticalAlignment="Top" Height="68" Width="170"/>
+        <Button x:Name="btnStart" Content="Начать игру" HorizontalAlignment="Left" Margin="10,568,0,0" VerticalAlignment="Top" Width="144" Click="createContent" Height="44"/>
+        <Label x:Name="resultLabel" Content="" HorizontalAlignment="Left" Margin="390,565,0,0" VerticalAlignment="Top" Height="47" Width="170"/>
     </Grid>
 </Window>

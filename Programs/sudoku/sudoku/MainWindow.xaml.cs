@@ -23,6 +23,9 @@ namespace sudoku
     /// </summary>
     public partial class MainWindow : Window
     {
+        Button[,] listButtons = new Button[9, 9];
+        int[,] newGrid = new int[9, 9];
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +36,7 @@ namespace sudoku
                     Button button = new Button();
                     button.Name = "btn" + i.ToString() + j.ToString();
                     button.Click += button_Click;
+                    button.MouseRightButtonUp += rightClick;
                     button.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.2 };
                     button.FontSize = 26;
                     button.Foreground = new SolidColorBrush(Colors.Red);
@@ -40,69 +44,86 @@ namespace sudoku
                     gridBut.Children.Add(button);
                     Grid.SetRow(button, i);
                     Grid.SetColumn(button, j);
+                    listButtons[i, j] = button;
                 }
             }
         }
 
-        int[,] newGrid = new int[9, 9];
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
             string data = (string)((Button)e.OriginalSource).Content;
             if (data == "9")
                 ((Button)e.OriginalSource).Content = "1";
             else
                 ((Button)e.OriginalSource).Content = (Convert.ToInt32(data) + 1).ToString();
             string numb = (string)((Button)e.OriginalSource).Content;
-            Button button = (Button) sender;
+            Button button = (Button)sender;
             int x = int.Parse(button.Name.Substring(3, 1));
             int y = int.Parse(button.Name.Substring(4, 1));
             newGrid[x, y] = Convert.ToInt32(numb);
-            bool res = isEqual();
-            if (res)
-            {
-                label.Content = "YOU WON";
-                btnStart.IsEnabled = true;
-                for (int i = 0; i < 9; i++)
-                {
-                    for (int j = 0; j < 9; j++)
-                    {
-                        
-                    }
-                }
-            }
-            else
-            {
-                label.Content = "Идёт игра";
-            }
+            finishGame();
         }
 
-        private void btnCreate(object sender, RoutedEventArgs e)
+        private void rightClick(object sender, MouseButtonEventArgs e)
         {
+            string data = (string)((Button)e.OriginalSource).Content;
+            if (data == "1" || data == "0")
+                ((Button)e.OriginalSource).Content = "9";
+            else
+                ((Button)e.OriginalSource).Content = (Convert.ToInt32(data) - 1).ToString();
+            string numb = (string)((Button)e.OriginalSource).Content;
+            Button button = (Button)sender;
+            int x = int.Parse(button.Name.Substring(3, 1));
+            int y = int.Parse(button.Name.Substring(4, 1));
+            newGrid[x, y] = Convert.ToInt32(numb);
+            finishGame();
+        }
+
+        private void createContent(object sender, RoutedEventArgs e)
+        {
+            resultLabel.Content = "";
             init(grid);
             update(grid);
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    Button btn = (Button)this.FindName("btn" + i.ToString() + j.ToString());
-                    btn.Visibility = Visibility.Visible;
-
+                    listButtons[i, j].Content = "0";
+                    listButtons[i, j].Visibility = Visibility.Visible;
+                    listButtons[i, j].IsEnabled = true;
                     Random chance = new Random(Guid.NewGuid().GetHashCode());
                     int randomNumb = chance.Next(0, 1000);
                     if (!(i == 7 && j == 2))
                     {
-                        btn.Content = grid[i, j].ToString();
-                        btn.IsEnabled = false;
-                        btn.Foreground = new SolidColorBrush(Colors.DarkRed);
+                        listButtons[i, j].Content = grid[i, j].ToString();
+                        listButtons[i, j].IsEnabled = false;
+                        listButtons[i, j].Foreground = new SolidColorBrush(Colors.DarkRed);
                     }
-
                     newGrid[i, j] = grid[i, j];
                 }
             }
             btnStart.IsEnabled = false;
+        }
 
+        private void finishGame()
+        {
+            bool res = isEqual();
+            if (res)
+            {
+                resultLabel.Content = "Ты победил!";
+                btnStart.IsEnabled = true;
+                for (int i = 0; i < 9; i++)
+                {
+                    for (int j = 0; j < 9; j++)
+                    {
+                        listButtons[i, j].IsEnabled = false;
+                    }
+                }
+            }
+            else
+            {
+                resultLabel.Content = "Идёт игра";
+            }
         }
 
         private bool isEqual()
