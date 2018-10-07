@@ -31,9 +31,9 @@ namespace WinGame15
             HideButtons();
         }
 
+        // Старт игры при нажатии на кнопку Старт
         private void buttonStart_Click(object sender, RoutedEventArgs e)
         {
-            // Начинаем игру с рандомным перемешиванием
             Random rnd = new Random();
             int steps = rnd.Next(700, 1600);
             game.Start(steps);
@@ -59,14 +59,15 @@ namespace WinGame15
             }  
         }
 
+        // Заполняем кнопки нулями и делаем их невидимыми
         void HideButtons()
         {
-            // Заполняем кнопки нулями и делаем их невидимыми
             for (int x = 0; x < size; x++)
                 for (int y = 0; y < size; y++)
                     ShowDigit(0, x, y);
         }
 
+        // Показ кнопок
         void ShowButtons()
         {
             // Проходим по всему массиву и делаем кнопки видимыми
@@ -76,6 +77,7 @@ namespace WinGame15
             labelMoves.Content = "Кол-во ходов: " + game.moves;
         }
 
+        // Скрытие кнопок
         void ShowDigit(int digit, int x, int y)
         {
             // Находим кнопку по названию и вписываем в неё цифру

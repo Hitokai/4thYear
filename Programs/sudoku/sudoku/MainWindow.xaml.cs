@@ -52,7 +52,7 @@ namespace sudoku
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Content;
-            if (data == "9")
+            if (data == "9" || data == "-")
                 ((Button)e.OriginalSource).Content = "1";
             else
                 ((Button)e.OriginalSource).Content = (Convert.ToInt32(data) + 1).ToString();
@@ -67,7 +67,7 @@ namespace sudoku
         private void rightClick(object sender, MouseButtonEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Content;
-            if (data == "1" || data == "0")
+            if (data == "1" || data == "-")
                 ((Button)e.OriginalSource).Content = "9";
             else
                 ((Button)e.OriginalSource).Content = (Convert.ToInt32(data) - 1).ToString();
@@ -82,24 +82,24 @@ namespace sudoku
         private void createContent(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "";
-            init(grid);
-            update(grid);
+            initGrid(grid);
+            updateGrid(grid);
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    listButtons[i, j].Content = "0";
+                    listButtons[i, j].Content = "-";
                     listButtons[i, j].Visibility = Visibility.Visible;
                     listButtons[i, j].IsEnabled = true;
                     Random chance = new Random(Guid.NewGuid().GetHashCode());
                     int randomNumb = chance.Next(0, 1000);
-                    if (!(i == 7 && j == 2))
+                    if (randomNumb % 1.5 == 0)
                     {
                         listButtons[i, j].Content = grid[i, j].ToString();
                         listButtons[i, j].IsEnabled = false;
                         listButtons[i, j].Foreground = new SolidColorBrush(Colors.DarkRed);
+                        newGrid[i, j] = grid[i, j];
                     }
-                    newGrid[i, j] = grid[i, j];
                 }
             }
             btnStart.IsEnabled = false;

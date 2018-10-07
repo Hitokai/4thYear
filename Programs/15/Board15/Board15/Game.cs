@@ -15,16 +15,16 @@ namespace Board15
 
         public int moves { get; private set; }
 
+        // Конструктор класса (инициализация игрового поля)
         public Game (int size)
         {
-            // Конструктор класса
             this.size = size;
             map = new Map(size);
         }
 
+        // Старт игры
         public void Start (int seed = 0)
         {
-            // Старт игры
             int digit = 0;
             for (int y = 0; y < size; y++)
                 for(int x = 0; x < size; x++) // Перебор всех координат
@@ -35,17 +35,17 @@ namespace Board15
             moves = 0;
         }
 
+        // Перемешивание кнопок
         void Shuffle(int seed)
         {
-            // Перемешивание кнопок
             Random random = new Random(seed);
             for (int j = 0; j < seed; j++)
                 Press(random.Next(size), random.Next(size));
         }
 
+        // Обработка нажатий на кнопку
         public int Press(int x, int y)
         {
-            // Нажатия на кнопки
             return Press(new Coord(x, y));
         }
 
@@ -79,18 +79,18 @@ namespace Board15
             return steps;
         }
 
+        // Смещение кнопок
         void Shift(int sx, int sy)
         {
-            // Смещение кнопок
             Coord next = space.Add(sx, sy);
             // Меняем кнопку и пустое место местами
             map.Copy(next, space); 
             space = next;
         }
 
+        // Получение информации о местонахождение кнопок
         public int GetDigit(int x, int y)
         {
-            // Получение информации о местонахождение кнопок
             return GetDigit(new Coord(x, y));
         }
 
@@ -101,9 +101,9 @@ namespace Board15
             return map.Get(xy);
         }
 
+        // Окончание игры
         public bool Solved()
         {
-            // Окончание игры
             if (!space.Equals(new Coord(size)))
                 // Пробел должен находится на последнем месте
                 return false;

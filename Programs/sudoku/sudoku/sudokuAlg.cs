@@ -11,8 +11,8 @@ namespace sudoku
     {
         public static int[,] grid = new int[9, 9];
 
-        public static void init(int[,] grid)
         // Заполнение массива цифрами по формуле
+        public static void initGrid(int[,] grid)
         // Формула постоянно сдвигает цифры на следующей строке на насколько позиций
         {
             for (int i = 0; i < 9; i++)
@@ -24,12 +24,12 @@ namespace sudoku
             }
         }
 
+        // Изменение значений в двух клетках
         static void changeTwoCell(int[,] grid, int findValue1, int findValue2)
-        // Обмен местами двух чисел
         {
             int xParam1, yParam1, xParam2, yParam2;
             xParam1 = yParam1 = xParam2 = yParam2 = 0;
-            // Поиск в таблице переданных значений и обмен их местами
+            // Поиск в таблице переданных значений
             for (int i = 0; i < 9; i+=3)
             {
                 for (int k = 0; k < 9; k+=3)
@@ -51,15 +51,15 @@ namespace sudoku
                             }
                         }
                     }
-                    // Меняем значения местами
+                    // Меняем значения
                     grid[xParam1, yParam1] = findValue2;
                     grid[xParam2, yParam2] = findValue1;
                 }
             }
         }
 
-        public static void update(int[,] grid)
         // Перемешивание чисел в таблице
+        public static void updateGrid(int[,] grid)
         {
             Random shuffleLevel = new Random(); // Кол-во перемешиваний
             for (int repeat = 0; repeat < shuffleLevel.Next(10, 20); repeat++)

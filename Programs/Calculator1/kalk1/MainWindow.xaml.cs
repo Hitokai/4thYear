@@ -29,7 +29,6 @@ namespace kalk1
         }
 
         //Добавление содержимого кнопок в строку
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Content;
@@ -38,7 +37,7 @@ namespace kalk1
             
         }
 
-        // Считает корень числа, при условии, что строка не пустая, и в ней только число, без действий
+        // Считывание корня числа, при условии, что строка не пустая, и в ней только число, без действий
         private void korenButton_Click(object sender, RoutedEventArgs e)
         {
             if (Convert.ToString(answLabel.Content) != "")
@@ -61,7 +60,7 @@ namespace kalk1
             
         }
 
-        //Функция очистки лейбла
+        // Очищение строки при нажатии на кнопку C
         private void clrButton(object sender, RoutedEventArgs e)
         {
             answLabel.Content = "";
@@ -77,7 +76,7 @@ namespace kalk1
             string deistv = "";
             int stLen = st.Length;
 
-            //Если знак действия последний или его впринципе нет, то кнопка равно не сработает
+            //Если знак действия последний или его вообще нет, то кнопка = не сработает
             if (st[st.Length - 1] != '*' || st[st.Length - 1] != '/' || st[st.Length - 1] != '+' || st[st.Length - 1] != '-' || st[st.Length - 1] != '^'
                 && st.Contains('*') == true || st.Contains('/') == true || st.Contains('+') == true || st.Contains('+') == true || st.Contains('^') == true)
                 {
@@ -93,7 +92,8 @@ namespace kalk1
 
                     }
                     string chh2 = "";
-                    //Удаление действия из строки 2. Remove не сработал
+
+                    // Удаление действия из строки 2.
                     for(int i = 0; i < ch2.Length-1; i++)
                     {
                         chh2 += ch2[i];
@@ -101,6 +101,8 @@ namespace kalk1
                     
                     double result1 = 0.0;
                     double result2 = 0.0;
+
+                    // Выполнение различных математических действий
                     try
                     {
                         if (deistv == "*")
