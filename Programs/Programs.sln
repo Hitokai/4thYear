@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinGame15", "15\Board15\Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sudoku", "sudoku\sudoku\sudoku.csproj", "{BA01C666-31BA-4524-829D-D4037B7A416A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "saper", "saper\saper\saper.csproj", "{A328685E-A3C7-44EC-9FE9-17623E0311A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BA01C666-31BA-4524-829D-D4037B7A416A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA01C666-31BA-4524-829D-D4037B7A416A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA01C666-31BA-4524-829D-D4037B7A416A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A328685E-A3C7-44EC-9FE9-17623E0311A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A328685E-A3C7-44EC-9FE9-17623E0311A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A328685E-A3C7-44EC-9FE9-17623E0311A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A328685E-A3C7-44EC-9FE9-17623E0311A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

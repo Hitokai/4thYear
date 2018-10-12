@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace sudoku
 {
-    class sudokuAlg
+    class SudokuAlg
     {
         public static int[,] grid = new int[9, 9];
 
