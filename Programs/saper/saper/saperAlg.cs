@@ -4,13 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace saper
 {
     class SaperAlg
     {
+        public static Button[,] buttonMatrix;
+        public static int[][] minesCoords = new int[0][];
+        public static int[,] gridNums;
+
         public static int[][] MinesCoord(int size)
         {
+            gridNums = new int[size, size];
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             int bombRand = 0;
             if (size == 10)
@@ -33,7 +39,51 @@ namespace saper
                 }
                 
             }
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    for (int k = 0; k < bombRand; k++)
+                    {
+                        if (i == bombCoordList[k][0] && j == bombCoordList[k][1])
+                            gridNums[i, j] = 99;
+                    }
+                }
+            }
             return bombCoordList;
+        }
+
+        public static void GenerateGrid(int size)
+        {
+            int K;
+            for (int i = 1; i <= size; i++)
+            {
+                for (int j = 1; j <= size; j++)
+                {
+                    if (gridNums[i, j] != 99)
+                    {
+                        K = 0;
+                        if (gridNums[i + 1, j - 1] == 99) K++;
+                        if (gridNums[i + 1, j] == 99) K++;
+                        if (gridNums[i + 1, j + 1] == 99) K++;
+                        if (gridNums[i, j - 1] == 99) K++;
+                        if (gridNums[i, j + 1] == 99) K++;
+                        if (gridNums[i - 1, j - 1] == 99) K++;
+                        if (gridNums[i - 1, j] == 99) K++;
+                        if (gridNums[i - 1, j + 1] == 99) K++;
+
+                        gridNums[i, j] = K;
+                    }
+                }
+            }
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    buttonMatrix[i, j].Content = gridNums[i, j];
+                }
+            }
         }
 
     }
