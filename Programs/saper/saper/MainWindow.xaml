@@ -40,6 +40,7 @@
         <Button x:Name="startButton" Content="Начать игру" HorizontalAlignment="Left" Margin="434,134,0,0" VerticalAlignment="Top" Width="130" Height="31" Click="startButton_Click"/>
         <Label x:Name="timeLabel" Content="Время" HorizontalAlignment="Left" Margin="496,384,0,0" VerticalAlignment="Top" Width="86"/>
         <Label x:Name="flagsLabel" Content="Флаги" HorizontalAlignment="Left" Margin="415,384,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="415,170,0,0" VerticalAlignment="Top" Height="184" Width="167"/>
 
 
     </Grid>

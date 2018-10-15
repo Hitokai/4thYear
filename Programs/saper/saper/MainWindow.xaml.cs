@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static saper.SaperAlg;
+using FontStyle = System.Windows.FontStyle;
+using Image = System.Windows.Controls.Image;
 
 namespace saper
 {
@@ -27,29 +30,31 @@ namespace saper
         {
             InitializeComponent();
         }
-        string las;
+
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
             if (minSizeRadio.IsChecked == true)
             {
+                label.Content = "";
                 CreateGrid(10);
                 minesCoords = MinesCoord(10);
                 GenerateGrid(10);
-                ShowBombs(10);
+                for (int i = 0; i < minesCoords.Length; i++)
+                {
+                    label.Content += minesCoords[i][0].ToString() + "." + minesCoords[i][1].ToString() + "\n";
+                }
             }
             else if (midSizeRadio.IsChecked == true)
             {
                 CreateGrid(14);
                 minesCoords = MinesCoord(14);
                 GenerateGrid(14);
-                ShowBombs(14);
             }
             else if (maxSizeRadio.IsChecked == true)
             {
                 CreateGrid(18);
                 minesCoords = MinesCoord(18);
                 GenerateGrid(18);
-                ShowBombs(18);
             }
         }
 
@@ -82,10 +87,11 @@ namespace saper
                 {
                     Button button = new Button();
                     button.Click += BombFindButton_Click;
-                    button.Name = "btn_" + i.ToString() + "_" + j.ToString();
+                    button.Name = "btn_" + (i + 1).ToString() + "_" + (j + 1).ToString();
                     button.Background = new SolidColorBrush(Colors.Gray);
-                    button.FontSize = 12;
+                    button.FontSize = 13;
                     button.Foreground = new SolidColorBrush(Colors.Black);
+                    button.FontWeight = FontWeights.Bold;
 
                     gameGrid.Children.Add(button);
                     Grid.SetRow(button, i);
@@ -100,24 +106,60 @@ namespace saper
         {
             string data = (string)((Button)e.OriginalSource).Name;
             string[] nums = data.Split('_');
-            for (int i = 0; i < gridNums.Length; i++)
+            ShowButtons(Convert.ToInt32(nums[1]), Convert.ToInt32(nums[2]), gameGrid.RowDefinitions.Count);
+        }
+
+        private void ShowButtons(int row, int col, int size)
+        {
+            if (gridNums[row, col] == 0)
             {
-                for (int j = 0; j < gridNums.Length; j++)
+                buttonMatrix[row - 1, col - 1].Content = "";
+                //listBut[row, col].Click -= butClick;
+                buttonMatrix[row - 1, col - 1].IsEnabled = false;//отключить пустую кнопку
+                buttonMatrix[row - 1, col - 1].Background = new SolidColorBrush(Colors.White);
+
+                // открыть примыкающие клетки
+                // слева, справа, сверху, снизу
+                ShowButtons(row, col - 1, size-1);
+                ShowButtons(row - 1, col, size-1);
+                ShowButtons(row, col + 1, size-1);
+                ShowButtons(row + 1, col, size-1);
+            }
+            else if (gridNums[row, col] != 0 && gridNums[row, col] != -1)
+            {
+                buttonMatrix[row - 1, col - 1].Content = gridNums[row, col];
+                buttonMatrix[row - 1, col - 1].IsEnabled = false;
+                buttonMatrix[row - 1, col - 1].Background = new SolidColorBrush(Colors.White);
+
+                if (gridNums[row, col] == 1)
+                    buttonMatrix[row - 1, col - 1].Foreground = new SolidColorBrush(Colors.Blue);
+                else if (gridNums[row, col] == 2)
+                    buttonMatrix[row - 1, col - 1].Foreground = new SolidColorBrush(Colors.Green);
+                else if (gridNums[row, col] == 3)
+                    buttonMatrix[row - 1, col - 1].Foreground = new SolidColorBrush(Colors.Orange);
+                else
+                    buttonMatrix[row - 1, col - 1].Foreground = new SolidColorBrush(Colors.Red);
+
+                for (int i = 0; i <= size; i++)
                 {
-                    if (minesCoords[i][0] == Convert.ToInt32(nums[1]) && minesCoords[i][1] == Convert.ToInt32(nums[2]))
+                    if (minesCoords[i][0] == Convert.ToInt32(row) && minesCoords[i][1] == Convert.ToInt32(col))
+                    {
+                        ShowBombs(size);
                         MessageBox.Show("Игра окончена. Вы проиграли.");
-                    else
-                        buttonMatrix[i, j].Content = gridNums[i, j];
+                        CreateGrid(size);
+                        break;
+                    }
                 }
             }
 
+            
         }
 
         private void ShowBombs(int size)
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 1; i <= size; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 1; j <= size; j++)
                 {
                     if (gridNums[i, j] == 99)
                     {
@@ -125,7 +167,7 @@ namespace saper
                         bomb.BeginInit();
                         bomb.UriSource = new Uri("/Resources/bomb.png", UriKind.RelativeOrAbsolute);
                         bomb.EndInit();
-                        buttonMatrix[i, j].Content = new Image() { Source = bomb };
+                        buttonMatrix[i - 1, j - 1].Content = new Image() { Source = bomb };
                     }
                 }
             }

@@ -16,7 +16,14 @@ namespace saper
 
         public static int[][] MinesCoord(int size)
         {
-            gridNums = new int[size, size];
+            gridNums = new int[size + 2, size + 2];
+            for (int i = 0; i < size + 2; i++)
+            {
+                for (int j = 0; j < size + 2; j++)
+                {
+                    gridNums[i, j] = -1;
+                }
+            }
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             int bombRand = 0;
             if (size == 10)
@@ -33,15 +40,15 @@ namespace saper
                     Random rand1 = new Random(Guid.NewGuid().GetHashCode());
                     Random rand2 = new Random(Guid.NewGuid().GetHashCode());
                     int[] subList = new int[2];
-                    subList[0] = rand1.Next(0, size);
-                    subList[1] = rand2.Next(0, size);
+                    subList[0] = rand1.Next(1, size + 1);
+                    subList[1] = rand2.Next(1, size + 1);
                     bombCoordList[i] = subList;
                 }
                 
             }
-            for (int i = 0; i < size; i++)
+            for (int i = 1; i <= size; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 1; j <= size; j++)
                 {
                     for (int k = 0; k < bombRand; k++)
                     {
@@ -63,6 +70,7 @@ namespace saper
                     if (gridNums[i, j] != 99)
                     {
                         K = 0;
+
                         if (gridNums[i + 1, j - 1] == 99) K++;
                         if (gridNums[i + 1, j] == 99) K++;
                         if (gridNums[i + 1, j + 1] == 99) K++;
@@ -77,13 +85,14 @@ namespace saper
                 }
             }
 
-            for (int i = 0; i < size; i++)
+            /*
+            for (int i = 1; i <= size; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 1; j <= size; j++)
                 {
-                    buttonMatrix[i, j].Content = gridNums[i, j];
+                    buttonMatrix[i - 1, j - 1].Content = gridNums[i, j];
                 }
-            }
+            }*/
         }
 
     }
