@@ -14,6 +14,7 @@ namespace saper
         public static int[][] minesCoords = new int[0][];
         public static int[,] gridNums;
 
+        // Функция генерации координат для мин
         public static int[][] MinesCoord(int size)
         {
             gridNums = new int[size + 2, size + 2];
@@ -26,12 +27,8 @@ namespace saper
             }
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             int bombRand = 0;
-            if (size == 10)
-                bombRand = rand.Next(12, 18);
-            else if (size == 14)
-                bombRand = rand.Next(18, 24);
-            else if (size == 18)
-                bombRand = rand.Next(24, 30);
+            // Рандомное кол-во мин
+            bombRand = rand.Next(Convert.ToInt32(Math.Floor(size * size * 0.12)), Convert.ToInt32(Math.Floor(size * size * 0.17)));
             int[][] bombCoordList = new int[bombRand][];
             for (int i = 0; i < bombRand; i++)
             {
@@ -46,6 +43,7 @@ namespace saper
                 }
                 
             }
+            // Вставка мин по координатам на поле игры
             for (int i = 1; i <= size; i++)
             {
                 for (int j = 1; j <= size; j++)
@@ -60,6 +58,7 @@ namespace saper
             return bombCoordList;
         }
 
+        // Генерация цифр вокруг мин
         public static void GenerateGrid(int size)
         {
             int K;

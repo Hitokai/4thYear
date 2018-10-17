@@ -4,7 +4,9 @@ using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,24 +27,41 @@ namespace saper
     /// </summary>
     public partial class MainWindow : Window
     {
+        int setFlagsCount;
+        int bombsFoundCount;
+        private static System.Timers.Timer aTimer;
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        // Начало игры при нажати на кнопку Старт
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
+            SetTimer();
             if (minSizeRadio.IsChecked == true)
             {
                 label.Content = "";
                 CreateGrid(10);
                 minesCoords = MinesCoord(10);
                 GenerateGrid(10);
-                for (int i = 0; i < minesCoords.Length; i++)
+                /*for (int i = 0; i < minesCoords.Length; i++)
                 {
                     label.Content += minesCoords[i][0].ToString() + "." + minesCoords[i][1].ToString() + "\n";
+                }*/
+                for (int i = 0; i < 12; i++)
+                {
+                    for (int j = 0; j < 12; j++)
+                    {
+                        label.Content += gridNums[i, j].ToString() + " ";
+                    }
+
+                    label.Content += "\n";
                 }
+
+                label.Content += "\n" + minesCoords.Length;
+
             }
             else if (midSizeRadio.IsChecked == true)
             {
@@ -58,6 +77,7 @@ namespace saper
             }
         }
 
+        // Генерация поля для игры в зависимости от выбранного размера
         private void CreateGrid(int size)
         {
             buttonMatrix = new Button[size, size];
@@ -87,6 +107,7 @@ namespace saper
                 {
                     Button button = new Button();
                     button.Click += BombFindButton_Click;
+                    button.MouseRightButtonDown += FlagButton;
                     button.Name = "btn_" + (i + 1).ToString() + "_" + (j + 1).ToString();
                     button.Background = new SolidColorBrush(Colors.Gray);
                     button.FontSize = 13;
@@ -102,6 +123,7 @@ namespace saper
             }
         }
 
+        // Действия происходящие при нажатии на кнопку на поле игры
         private void BombFindButton_Click(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Name;
@@ -109,23 +131,55 @@ namespace saper
             ShowButtons(Convert.ToInt32(nums[1]), Convert.ToInt32(nums[2]), gameGrid.RowDefinitions.Count);
         }
 
+        private void FlagButton(object sender, MouseEventArgs e)
+        {
+            Button currBtn = (sender as Button);
+            
+            int row = 1 + Grid.GetRow(currBtn),
+                col = 1 + Grid.GetColumn(currBtn);
+            
+            if (gridNums[row, col] == 99)
+                bombsFoundCount++;
+
+            if (currBtn.Content == null)
+            {
+                currBtn.Content = "◄";
+                currBtn.Foreground = new SolidColorBrush(Colors.Red);
+                setFlagsCount++;
+                flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
+            }
+            else
+            {
+                currBtn.Content = null;
+                currBtn.Foreground = new SolidColorBrush(Colors.Gray);
+                setFlagsCount--;
+                flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
+                if (gridNums[row, col] == 99)
+                    bombsFoundCount--;
+            }
+
+            if (bombsFoundCount == minesCoords.Length)
+                MessageBox.Show("Вы победили");
+        }
+
+        // Функция показывающая кнопки при нажатии на них
         private void ShowButtons(int row, int col, int size)
         {
             if (gridNums[row, col] == 0)
             {
+                gridNums[row, col] = 100;
                 buttonMatrix[row - 1, col - 1].Content = "";
-                //listBut[row, col].Click -= butClick;
-                buttonMatrix[row - 1, col - 1].IsEnabled = false;//отключить пустую кнопку
+                buttonMatrix[row - 1, col - 1].IsEnabled = false;
                 buttonMatrix[row - 1, col - 1].Background = new SolidColorBrush(Colors.White);
 
                 // открыть примыкающие клетки
-                // слева, справа, сверху, снизу
-                ShowButtons(row, col - 1, size-1);
-                ShowButtons(row - 1, col, size-1);
-                ShowButtons(row, col + 1, size-1);
-                ShowButtons(row + 1, col, size-1);
+                // слева, сверху, справа, снизу
+                ShowButtons(row, col - 1, size);
+                ShowButtons(row - 1, col, size);
+                ShowButtons(row, col + 1, size);
+                ShowButtons(row + 1, col, size);
             }
-            else if (gridNums[row, col] != 0 && gridNums[row, col] != -1)
+            else if (gridNums[row, col] < 100 && gridNums[row, col] != -1)
             {
                 buttonMatrix[row - 1, col - 1].Content = gridNums[row, col];
                 buttonMatrix[row - 1, col - 1].IsEnabled = false;
@@ -140,21 +194,22 @@ namespace saper
                 else
                     buttonMatrix[row - 1, col - 1].Foreground = new SolidColorBrush(Colors.Red);
 
-                for (int i = 0; i <= size; i++)
+                for (int i = 0; i < minesCoords.Length; i++)
                 {
                     if (minesCoords[i][0] == Convert.ToInt32(row) && minesCoords[i][1] == Convert.ToInt32(col))
                     {
                         ShowBombs(size);
                         MessageBox.Show("Игра окончена. Вы проиграли.");
                         CreateGrid(size);
+                        minesCoords = MinesCoord(size);
+                        GenerateGrid(size);
                         break;
                     }
                 }
             }
-
-            
         }
 
+        // Функция для показа всех бомб находищихся на поле
         private void ShowBombs(int size)
         {
             for (int i = 1; i <= size; i++)
@@ -171,6 +226,28 @@ namespace saper
                     }
                 }
             }
+        }
+
+        int sek, min, hours;
+
+        private void SetTimer()
+        {
+            // Create a timer with a two second interval.
+            aTimer = new System.Timers.Timer(2000);
+            // Hook up the Elapsed event for the timer. 
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+            
+        }
+
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            sek++;
+            if (sek == 60)
+            { sek = 0; min++; }
+            else if (min == 60) { min = 0; hours++; }
+            timeLabel.Content = e.SignalTime;
         }
     }
 }
