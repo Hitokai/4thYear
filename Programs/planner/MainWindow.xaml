@@ -1,0 +1,23 @@
+﻿<Window x:Class="planner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:planner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="410.609" Width="529.586">
+    <Grid>
+        <Label x:Name="regLabel" Content="РЕГИСТРАЦИЯ" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="246" FontSize="36"/>
+        <Label x:Name="logLabel" Content="ВХОД" HorizontalAlignment="Left" Margin="267,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.5" Width="246" FontSize="36"/>
+        <TextBox x:Name="loginRegBox" HorizontalAlignment="Left" Height="23" Margin="67,104,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="135" GotFocus="Box_GotFocus" LostFocus="Box_LostFocus" Foreground="#FFC3C3C3"/>
+        <TextBox x:Name="passwordRegBox" HorizontalAlignment="Left" Height="23" Margin="67,132,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="135" GotFocus="Box_GotFocus" LostFocus="Box_LostFocus" Foreground="#FFC3C3C3"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="23" Margin="67,160,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="135" GotFocus="Box_GotFocus" LostFocus="Box_LostFocus" Foreground="#FFC3C3C3"/>
+        <TextBox x:Name="fNameBox" HorizontalAlignment="Left" Height="23" Margin="67,188,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="135" GotFocus="Box_GotFocus" LostFocus="Box_LostFocus" Foreground="#FFC3C3C3"/>
+        <TextBox x:Name="lNameBox" HorizontalAlignment="Left" Height="23" Margin="67,216,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Width="135" GotFocus="Box_GotFocus" LostFocus="Box_LostFocus" Foreground="#FFC3C3C3"/>
+        <TextBox x:Name="loginLogBox" HorizontalAlignment="Left" Height="23" Margin="326,144,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="135" GotFocus="Box_GotFocus" LostFocus="Box_LostFocus" Foreground="#FFC3C3C3"/>
+        <TextBox x:Name="passwordLogBox" HorizontalAlignment="Left" Height="23" Margin="326,172,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="135" GotFocus="Box_GotFocus" LostFocus="Box_LostFocus" Foreground="#FFC3C3C3"/>
+        <Button x:Name="regButton" Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="67,292,0,0" VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="logButton" Content="Войти" HorizontalAlignment="Left" Margin="355,292,0,0" VerticalAlignment="Top" Width="76"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="380" Margin="261,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+    </Grid>
+</Window>
