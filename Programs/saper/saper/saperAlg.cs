@@ -30,18 +30,24 @@ namespace saper
             // Рандомное кол-во мин
             bombRand = rand.Next(Convert.ToInt32(Math.Floor(size * size * 0.12)), Convert.ToInt32(Math.Floor(size * size * 0.17)));
             int[][] bombCoordList = new int[bombRand][];
+
+            int[] sl = new int[2] { -1, -1 };
             for (int i = 0; i < bombRand; i++)
             {
-                for (int j = 0; j < 2; j++)
-                {
-                    Random rand1 = new Random(Guid.NewGuid().GetHashCode());
-                    Random rand2 = new Random(Guid.NewGuid().GetHashCode());
-                    int[] subList = new int[2];
-                    subList[0] = rand1.Next(1, size + 1);
-                    subList[1] = rand2.Next(1, size + 1);
+                bombCoordList[i] = sl;
+            }
+
+            for (int i = 0; i < bombRand; i++)
+            {
+                Random rand1 = new Random(Guid.NewGuid().GetHashCode());
+                Random rand2 = new Random(Guid.NewGuid().GetHashCode());
+                int[] subList = new int[2];
+                subList[0] = rand1.Next(1, size + 1);
+                subList[1] = rand2.Next(1, size + 1);
+                if (CheckBombsCoord(bombCoordList, subList, bombRand))
                     bombCoordList[i] = subList;
-                }
-                
+                else
+                    i--;
             }
             // Вставка мин по координатам на поле игры
             for (int i = 1; i <= size; i++)
@@ -56,6 +62,16 @@ namespace saper
                 }
             }
             return bombCoordList;
+        }
+
+        public static bool CheckBombsCoord(int[][] coords,int[] newCoords, int size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (newCoords[0] == coords[i][0] && newCoords[1] == coords[i][1])
+                    return false;
+            }
+            return true;
         }
 
         // Генерация цифр вокруг мин
@@ -83,15 +99,6 @@ namespace saper
                     }
                 }
             }
-
-            /*
-            for (int i = 1; i <= size; i++)
-            {
-                for (int j = 1; j <= size; j++)
-                {
-                    buttonMatrix[i - 1, j - 1].Content = gridNums[i, j];
-                }
-            }*/
         }
 
     }

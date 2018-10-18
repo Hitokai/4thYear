@@ -17,7 +17,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static saper.SaperAlg;
-using FontStyle = System.Windows.FontStyle;
 using Image = System.Windows.Controls.Image;
 
 namespace saper
@@ -27,41 +26,27 @@ namespace saper
     /// </summary>
     public partial class MainWindow : Window
     {
+
         int setFlagsCount;
-        int bombsFoundCount;
-        private static System.Timers.Timer aTimer;
+        int openButtonsCount;
+        int sec, min, hours;
+        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent();
+            timer.Tick += new EventHandler(timerTick);
+            timer.Interval = new TimeSpan(0, 0, 1);
         }
 
         // Начало игры при нажати на кнопку Старт
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
-            SetTimer();
             if (minSizeRadio.IsChecked == true)
             {
-                label.Content = "";
                 CreateGrid(10);
                 minesCoords = MinesCoord(10);
                 GenerateGrid(10);
-                /*for (int i = 0; i < minesCoords.Length; i++)
-                {
-                    label.Content += minesCoords[i][0].ToString() + "." + minesCoords[i][1].ToString() + "\n";
-                }*/
-                for (int i = 0; i < 12; i++)
-                {
-                    for (int j = 0; j < 12; j++)
-                    {
-                        label.Content += gridNums[i, j].ToString() + " ";
-                    }
-
-                    label.Content += "\n";
-                }
-
-                label.Content += "\n" + minesCoords.Length;
-
             }
             else if (midSizeRadio.IsChecked == true)
             {
@@ -80,6 +65,14 @@ namespace saper
         // Генерация поля для игры в зависимости от выбранного размера
         private void CreateGrid(int size)
         {
+            sec = 0;
+            min = 0;
+            hours = 0;
+            timer.Start();
+
+            setFlagsCount = 0;
+            flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
+
             buttonMatrix = new Button[size, size];
             gameGrid.RowDefinitions.Clear();
             gameGrid.ColumnDefinitions.Clear();
@@ -129,6 +122,25 @@ namespace saper
             string data = (string)((Button)e.OriginalSource).Name;
             string[] nums = data.Split('_');
             ShowButtons(Convert.ToInt32(nums[1]), Convert.ToInt32(nums[2]), gameGrid.RowDefinitions.Count);
+
+            openButtonsCount = 0;
+            for (int i = 0; i < gameGrid.RowDefinitions.Count; i++)
+            {
+                for (int j = 0; j < gameGrid.ColumnDefinitions.Count; j++)
+                {
+                    if (buttonMatrix[i, j].IsEnabled == false)
+                        openButtonsCount++;
+                }
+            }
+
+            if (openButtonsCount + minesCoords.Length == gameGrid.RowDefinitions.Count * gameGrid.RowDefinitions.Count)
+            {
+                timer.Stop();
+                MessageBox.Show("Вы победили");
+                CreateGrid(gameGrid.RowDefinitions.Count);
+                minesCoords = MinesCoord(gameGrid.RowDefinitions.Count);
+                GenerateGrid(gameGrid.RowDefinitions.Count);
+            }    
         }
 
         private void FlagButton(object sender, MouseEventArgs e)
@@ -139,7 +151,7 @@ namespace saper
                 col = 1 + Grid.GetColumn(currBtn);
             
             if (gridNums[row, col] == 99)
-                bombsFoundCount++;
+                openButtonsCount++;
 
             if (currBtn.Content == null)
             {
@@ -155,23 +167,20 @@ namespace saper
                 setFlagsCount--;
                 flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
                 if (gridNums[row, col] == 99)
-                    bombsFoundCount--;
+                    openButtonsCount--;
             }
-
-            if (bombsFoundCount == minesCoords.Length)
-                MessageBox.Show("Вы победили");
         }
 
         // Функция показывающая кнопки при нажатии на них
         private void ShowButtons(int row, int col, int size)
         {
+            
             if (gridNums[row, col] == 0)
             {
                 gridNums[row, col] = 100;
                 buttonMatrix[row - 1, col - 1].Content = "";
                 buttonMatrix[row - 1, col - 1].IsEnabled = false;
                 buttonMatrix[row - 1, col - 1].Background = new SolidColorBrush(Colors.White);
-
                 // открыть примыкающие клетки
                 // слева, сверху, справа, снизу
                 ShowButtons(row, col - 1, size);
@@ -181,6 +190,14 @@ namespace saper
             }
             else if (gridNums[row, col] < 100 && gridNums[row, col] != -1)
             {
+                if (buttonMatrix[row - 1, col - 1].Content == "◄")
+                {
+                    setFlagsCount -= 1;
+                    if (setFlagsCount < 0)
+                        setFlagsCount = 0;
+                    flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
+                }
+
                 buttonMatrix[row - 1, col - 1].Content = gridNums[row, col];
                 buttonMatrix[row - 1, col - 1].IsEnabled = false;
                 buttonMatrix[row - 1, col - 1].Background = new SolidColorBrush(Colors.White);
@@ -199,6 +216,7 @@ namespace saper
                     if (minesCoords[i][0] == Convert.ToInt32(row) && minesCoords[i][1] == Convert.ToInt32(col))
                     {
                         ShowBombs(size);
+                        timer.Stop();
                         MessageBox.Show("Игра окончена. Вы проиграли.");
                         CreateGrid(size);
                         minesCoords = MinesCoord(size);
@@ -207,6 +225,7 @@ namespace saper
                     }
                 }
             }
+
         }
 
         // Функция для показа всех бомб находищихся на поле
@@ -228,26 +247,13 @@ namespace saper
             }
         }
 
-        int sek, min, hours;
-
-        private void SetTimer()
+        private void timerTick(object sender, EventArgs e)
         {
-            // Create a timer with a two second interval.
-            aTimer = new System.Timers.Timer(2000);
-            // Hook up the Elapsed event for the timer. 
-            aTimer.Elapsed += OnTimedEvent;
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
-            
-        }
-
-        private void OnTimedEvent(Object source, ElapsedEventArgs e)
-        {
-            sek++;
-            if (sek == 60)
-            { sek = 0; min++; }
+            sec++;
+            if (sec == 60)
+            { sec = 0; min++; }
             else if (min == 60) { min = 0; hours++; }
-            timeLabel.Content = e.SignalTime;
+            timeLabel.Content = "Время: " + hours.ToString() + ":" + min.ToString() + ":" + sec.ToString();
         }
     }
 }
