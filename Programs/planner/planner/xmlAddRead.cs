@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Xml;
 
 namespace planner
@@ -62,9 +64,11 @@ namespace planner
                 // получаем атрибут name
                 if (xnode.Attributes.Count > 0)
                 {
-                    XmlNode attr = xnode.Attributes.GetNamedItem("label");
+                    XmlNode attr = xnode.Attributes.GetNamedItem("title");
                     if (attr != null)
+                    {
                         labels.Add(attr.Value);
+                    }    
                 }
                 // обходим все дочерние узлы элемента user
                 foreach (XmlNode childnode in xnode.ChildNodes)

@@ -72,10 +72,10 @@ namespace planner
             else
             {
                 cardsInRow = 4;
-                cardsInCol = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(cardCount % 4 + 1)));
+                cardsInCol = cardCount / 4 + 1;
             }
 
-            CardsMatrix = new Card[cardsInCol, cardsInRow];
+            CardsMatrix = new Card[cardsInRow, cardsInCol];
 
             for (int i = 0; i < cardsInCol; i++)
             {
@@ -87,69 +87,94 @@ namespace planner
                 newGrid.RowDefinitions.Add(row);
             }
 
-            for (int i = 0; i < cardsInCol; i++)
+            for (int i = 0; i < cardsInRow; i++)
             {
-                for (int j = 0; j < cardsInRow; j++)
+                for (int j = 0; j < cardsInCol; j++)
                 {
+                    /*if (cardsInRow - (cardCount - (i + j)) == cardCount % 4)
+                    {
+                        break;
+                    }*/
+
                     Card miniCard = new Card();
 
                     miniCard.Width = 245;
                     miniCard.Height = 255;
                     miniCard.Background = new SolidColorBrush(Colors.White);
 
-                    Grid.SetRow(miniCard, i);
-                    Grid.SetColumn(miniCard, j);
+                    Grid.SetRow(miniCard, j);
+                    Grid.SetColumn(miniCard, i);
 
                     newGrid.Children.Add(miniCard);
                     CardsMatrix[i, j] = miniCard;
+
                 }
             }
             scroll.Content = newGrid;
 
-            for (int i = 0; i < cardsInCol; i++)
+            
+
+            int x = 0;
+            int y = 0;
+
+
+            for (int i = 0; i < cardCount; i++)
             {
-                for (int j = 0; j < cardsInRow; j++)
+                
+                Grid miniGrid = new Grid();
+                CreateRowDef(miniGrid, "0");
+                CreateRowDef(miniGrid, "*");
+                CreateRowDef(miniGrid, "35");
+
+                StackPanel miniPanel1 = new StackPanel();
+                miniPanel1.Margin = new Thickness(8, 5, 8, 0);
+                AddTextToHeaderAndLabel(miniPanel1, newXml.labels[i], 0);
+                AddTextToHeaderAndLabel(miniPanel1, newXml.contents[i], 1);
+                miniGrid.Children.Add(miniPanel1);
+
+                StackPanel miniPanel2 = new StackPanel();
+                miniPanel2.Margin = new Thickness(8, 5, 8, 5);
+                miniPanel2.Orientation = Orientation.Horizontal;
+                AddTextToTime(miniPanel2, newXml.dates[i]);
+                miniGrid.Children.Add(miniPanel2);
+
+                MaterialDesignThemes.Wpf.PopupBox box1 = new MaterialDesignThemes.Wpf.PopupBox();
+                box1.PlacementMode = PopupBoxPlacementMode.RightAndAlignMiddles;
+                box1.HorizontalAlignment = HorizontalAlignment.Right;
+                box1.Foreground = new SolidColorBrush(Colors.Black);
+                box1.Background = new SolidColorBrush(Colors.Black);
+                box1.Margin = new Thickness(132, 0, 0, -5);
+
+                StackPanel dropMenu = new StackPanel();
+                Button deleteButton = new Button();
+                deleteButton.Content = "Удалить";
+                dropMenu.Children.Add(deleteButton);
+                box1.Content = dropMenu;
+
+                miniPanel2.Children.Add(box1);
+
+                Grid.SetRow(miniPanel1, 1);
+                Grid.SetRow(miniPanel2, 2);
+
+                if (i % 4 == 0 && i != 0)
                 {
-                    Grid miniGrid = new Grid();
-                    CreateRowDef(miniGrid, "0");
-                    CreateRowDef(miniGrid, "*");
-                    CreateRowDef(miniGrid, "35");
+                    y = 0;
+                    x++;
+                }
+                CardsMatrix[y, x].Content = miniGrid;
+                y++;
+            }
 
-                    StackPanel miniPanel1 = new StackPanel();
-                    miniPanel1.Margin = new Thickness(8, 5, 8, 0);
-                    addText(miniPanel1, newXml.labels[i], 0);
-                    addText(miniPanel1, newXml.contents[i], 1);
-                    miniGrid.Children.Add(miniPanel1);
-
-                    StackPanel miniPanel2 = new StackPanel();
-                    miniPanel2.Margin = new Thickness(8, 5, 8, 5);
-                    miniPanel2.Orientation = Orientation.Horizontal;
-                    addText2(miniPanel2, newXml.dates[i]);
-                    miniGrid.Children.Add(miniPanel2);
-
-                    MaterialDesignThemes.Wpf.PopupBox box1 = new MaterialDesignThemes.Wpf.PopupBox();
-                    box1.PlacementMode = PopupBoxPlacementMode.RightAndAlignMiddles;
-                    box1.HorizontalAlignment = HorizontalAlignment.Right;
-                    box1.Foreground = new SolidColorBrush(Colors.Black);
-                    box1.Background = new SolidColorBrush(Colors.Black);
-                    box1.Margin = new Thickness(132, 0, 0, -5);
-
-                    StackPanel dropMenu = new StackPanel();
-                    Button deleteButton = new Button();
-                    deleteButton.Content = "Удалить";
-                    dropMenu.Children.Add(deleteButton);
-                    box1.Content = dropMenu;
-
-                    miniPanel2.Children.Add(box1);
-
-                    Grid.SetRow(miniPanel1, 1);
-                    Grid.SetRow(miniPanel2, 2);
-
-                    CardsMatrix[i, j].Content = miniGrid;
-                }   
+            for (int i = 0; i < cardsInRow; i++)
+            {
+                for (int j = 0; j < cardsInCol; j++)
+                {
+                    if (CardsMatrix[i, j].Content == null)
+                        newGrid.Children.Remove(CardsMatrix[i, j]);
+                }
             }
         }
-        public void addText(StackPanel grid, string len, int num)
+        public void AddTextToHeaderAndLabel(StackPanel grid, string len, int num)
         {
             TextBlock tb = new TextBlock();
             tb.Text = len;
@@ -169,7 +194,7 @@ namespace planner
             grid.Children.Add(tb);
         }
 
-        public void addText2(StackPanel grid, string date)
+        public void AddTextToTime(StackPanel grid, string date)
         {
             TextBlock tb = new TextBlock();
             tb.Text = date;

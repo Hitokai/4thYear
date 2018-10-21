@@ -39,7 +39,24 @@ namespace planner
             headerBox.Clear();
             contentTextBox.Clear();
             dateTime.Text = "";
+            
         }
 
+        private void contentTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string objName = (string)((TextBox)e.OriginalSource).Name;
+            if (objName == "contentTextBox")
+            {
+                cardContent.Text = contentTextBox.Text;
+                counter.Text = contentTextBox.Text.Length.ToString() + "/400";
+            }
+            else
+                cardHeader.Text = headerBox.Text;
+        }
+
+        private void dateTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            cardDateTime.Text = dateTime.Text;
+        }
     }
 }

@@ -39,3 +39,38 @@ A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\bin\Debug\sv\Xceed.Wpf
 A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\obj\Debug\cardsGrid.g.cs
 A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\obj\Debug\cardsGrid.baml
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\planner.exe.config
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\planner.exe
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\planner.pdb
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\MaterialDesignColors.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.csprojAssemblyReference.cache
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\MainWindow.g.cs
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\createCard.g.cs
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\cardsGrid.g.cs
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\App.g.cs
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner_MarkupCompile.cache
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner_MarkupCompile.lref
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\App.baml
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\MainWindow.baml
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\createCard.baml
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\cardsGrid.baml
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.g.resources
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.Properties.Resources.resources
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.csproj.GenerateResource.cache
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.csproj.CoreCompileInputs.cache
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.csproj.CopyComplete
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.exe
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\planner.pdb
