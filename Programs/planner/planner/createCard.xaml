@@ -75,7 +75,7 @@
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" FontSize="15" Margin="5,10,400,5" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Grid.ColumnSpan="2">Дата события</Label>
+                <Label Grid.Column="0" FontSize="15" Margin="0,10,400,5" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Grid.ColumnSpan="2">Дата события</Label>
                 <xctk:DateTimePicker Name="dateTime" Grid.Column="1" FontSize="15" BorderBrush="LightGray" CalendarWidth="280" Margin="10,10,5,5" ValueChanged="dateTime_ValueChanged"></xctk:DateTimePicker>
             </Grid>
         </StackPanel>
@@ -96,18 +96,18 @@
 
 
                         <StackPanel Grid.Row="1" Margin="8,10,8,0" >
-                            <TextBlock Name="cardHeader" Foreground="Black" FontWeight="Bold" TextAlignment="Center" FontSize="14"><Run Text="Тут будет заголовок"/></TextBlock>
+                            <TextBlock Name="cardHeader" Foreground="Black" FontWeight="Bold" TextAlignment="Center" FontSize="14"><Run Text="Заголовок"/></TextBlock>
                             <ScrollViewer MaxHeight="180" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True" Margin="3,10,5,3">
-                                <TextBlock  Name="cardContent" Foreground="Black" TextWrapping="Wrap"  VerticalAlignment="Center" ><Run Text="Тут будет текст"/></TextBlock>
+                                <TextBlock  Name="cardContent" Foreground="Black" TextWrapping="Wrap"  VerticalAlignment="Center" ><Run Text="Tекст"/></TextBlock>
                             </ScrollViewer>
-                                    <!--<RichTextBox Name="cardContent" Foreground="Black" VerticalAlignment="Center" Margin="0,5,0,5" Height="189" Padding="0" BorderBrush="White">
+                            <!--<RichTextBox Name="cardContent" Foreground="Black" VerticalAlignment="Center" Margin="0,5,0,5" Height="189" Padding="0" BorderBrush="White">
                                
                             </RichTextBox>-->
                         </StackPanel>
 
                         <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center" Width="225" Height="35" Margin="10,0">
                             <Border BorderBrush="Black" BorderThickness="0 1 1 1"></Border>
-                            <TextBlock Name="cardDateTime" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Margin="2,6,8,8"><Run Text="Тут будет дата и время"/></TextBlock>
+                            <TextBlock Name="cardDateTime" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Margin="2,6,8,8"><Run Text="Дата и время"/></TextBlock>
                         </StackPanel>
 
                     </Grid>

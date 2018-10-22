@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace planner
 {
@@ -14,9 +15,11 @@ namespace planner
         public string Title { get; set; }
         public string Content { get; set; }
         public string DateTime { get; set; }
+        public string Id { get; set; }
         public List<string> labels = new List<string>();
         public List<string> contents = new List<string>();
         public List<string> dates = new List<string>();
+        public List<string> ids = new List<string>();
         public int CardsCount;
 
         public void AddCard()
@@ -28,19 +31,28 @@ namespace planner
             XmlElement noteElement = xDoc.CreateElement("note");
             // создаем атрибут name
             XmlAttribute noteAttribute = xDoc.CreateAttribute("title");
+            XmlAttribute noteAttribute2 = xDoc.CreateAttribute("id");
             // создаем элементы company и age
             XmlElement contentElement = xDoc.CreateElement("content");
             XmlElement dateTimeElement = xDoc.CreateElement("dateTime");
             // создаем текстовые значения для элементов и атрибута
             XmlText titleText = xDoc.CreateTextNode(Title);
+            ReadCards();
+            XmlText idNum;
+            if (ids.Count != 0)
+                idNum = xDoc.CreateTextNode((Convert.ToInt32(ids[ids.Count() - 1]) + 1).ToString());
+            else
+                idNum = xDoc.CreateTextNode("0");
             XmlText contentText = xDoc.CreateTextNode(Content);
             XmlText dateTimeText = xDoc.CreateTextNode(DateTime);
 
             //добавляем узлы
             noteAttribute.AppendChild(titleText);
+            noteAttribute2.AppendChild(idNum);
             contentElement.AppendChild(contentText);
             dateTimeElement.AppendChild(dateTimeText);
             noteElement.Attributes.Append(noteAttribute);
+            noteElement.Attributes.Append(noteAttribute2);
             noteElement.AppendChild(contentElement);
             noteElement.AppendChild(dateTimeElement);
             xRoot.AppendChild(noteElement);
@@ -52,6 +64,7 @@ namespace planner
             labels.Clear();
             contents.Clear();
             dates.Clear();
+            ids.Clear();
 
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load("./Resources/cards.xml");
@@ -65,10 +78,12 @@ namespace planner
                 if (xnode.Attributes.Count > 0)
                 {
                     XmlNode attr = xnode.Attributes.GetNamedItem("title");
+                    XmlNode attr2 = xnode.Attributes.GetNamedItem("id");
                     if (attr != null)
-                    {
                         labels.Add(attr.Value);
-                    }    
+                    if (attr2 != null)
+                        ids.Add(attr2.Value);
+
                 }
                 // обходим все дочерние узлы элемента user
                 foreach (XmlNode childnode in xnode.ChildNodes)
@@ -89,6 +104,18 @@ namespace planner
             }
 
             CardsCount = xmlLen;
+        }
+           
+        public void DeleteCard(string id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("./Resources/cards.xml");
+            XmlNodeList nodes = doc.SelectNodes(String.Format("//note[@id='{0}']", id));
+            for (int i = nodes.Count - 1; i >= 0; i--)
+            {
+                nodes[i].ParentNode.RemoveChild(nodes[i]);
+            }
+            doc.Save("./Resources/cards.xml");
         }
     }
 }

@@ -24,7 +24,7 @@ namespace planner
     /// </summary>
     public partial class cardsGrid : UserControl
     {
-
+        private PackIcon _icon = new PackIcon { Kind = PackIconKind.Close };
         Card[,] CardsMatrix;
         Grid newGrid = new Grid();
         XmlAddRead newXml = new XmlAddRead();
@@ -135,26 +135,30 @@ namespace planner
                 StackPanel miniPanel2 = new StackPanel();
                 miniPanel2.Margin = new Thickness(8, 5, 8, 5);
                 miniPanel2.Orientation = Orientation.Horizontal;
+                Grid gridInMiniPanel2 = new Grid();
+                CreateColDef(gridInMiniPanel2, "*");
                 AddTextToTime(miniPanel2, newXml.dates[i]);
                 miniGrid.Children.Add(miniPanel2);
 
-                MaterialDesignThemes.Wpf.PopupBox box1 = new MaterialDesignThemes.Wpf.PopupBox();
-                box1.PlacementMode = PopupBoxPlacementMode.RightAndAlignMiddles;
-                box1.HorizontalAlignment = HorizontalAlignment.Right;
-                box1.Foreground = new SolidColorBrush(Colors.Black);
-                box1.Background = new SolidColorBrush(Colors.Black);
-                box1.Margin = new Thickness(132, 0, 0, -5);
-
-                StackPanel dropMenu = new StackPanel();
                 Button deleteButton = new Button();
-                deleteButton.Content = "Удалить";
-                dropMenu.Children.Add(deleteButton);
-                box1.Content = dropMenu;
-
-                miniPanel2.Children.Add(box1);
+                deleteButton.Width = 25;
+                deleteButton.Height = 25;
+                deleteButton.Foreground = new SolidColorBrush(Colors.Black);
+                deleteButton.Background = new SolidColorBrush(Colors.White);
+                deleteButton.BorderBrush = new SolidColorBrush(Colors.White);
+                deleteButton.FontSize = 1;
+                deleteButton.Padding = new Thickness(0);
+                deleteButton.Content = _icon;
+                deleteButton.HorizontalAlignment = HorizontalAlignment.Right;
+                deleteButton.Margin = new Thickness(50, -10, 0, 0);
+                deleteButton.Click += deleteCard;
+                deleteButton.Name = "id_" + newXml.ids[i];
+                Grid.SetColumn(deleteButton, 0);
+                miniPanel2.Children.Add(deleteButton);
 
                 Grid.SetRow(miniPanel1, 1);
                 Grid.SetRow(miniPanel2, 2);
+                
 
                 if (i % 4 == 0 && i != 0)
                 {
@@ -162,6 +166,7 @@ namespace planner
                     x++;
                 }
                 CardsMatrix[y, x].Content = miniGrid;
+                CardsMatrix[y, x].Name = "id_" + newXml.ids[i];
                 y++;
             }
 
@@ -174,6 +179,16 @@ namespace planner
                 }
             }
         }
+
+        private void deleteCard(object sender, RoutedEventArgs e)
+        {
+            string cardId = (sender as Button).Name.Split('_')[1];
+            newXml.DeleteCard(cardId);
+            newGrid.Children.Clear();
+            newXml.ReadCards();
+            LoadCards(newXml.CardsCount);
+        }
+
         public void AddTextToHeaderAndLabel(StackPanel grid, string len, int num)
         {
             TextBlock tb = new TextBlock();
@@ -200,6 +215,7 @@ namespace planner
             tb.Text = date;
             tb.Margin = new Thickness(0, 0, 0, 0);
             tb.Foreground = new SolidColorBrush(Colors.Black);
+            Grid.SetColumn(tb, 0);
             grid.Children.Add(tb);
         }
 
@@ -210,6 +226,15 @@ namespace planner
             miniRow.Height = new GridLength(1.0, GridUnitType.Star);
             miniRow.Height = (GridLength)miniConverter.ConvertFromString(len);
             grid.RowDefinitions.Add(miniRow);
+        }
+
+        public void CreateColDef(Grid grid, string len)
+        {
+            var miniConverter = new GridLengthConverter();
+            ColumnDefinition miniRow = new ColumnDefinition();
+            miniRow.Width = new GridLength(1.0, GridUnitType.Star);
+            miniRow.Width = (GridLength)miniConverter.ConvertFromString(len);
+            grid.ColumnDefinitions.Add(miniRow);
         }
     }
 

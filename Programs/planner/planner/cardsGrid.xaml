@@ -9,49 +9,44 @@
              Background="White">
     <Grid Name="MainGrid" Height="540" Width="1010">
         <ScrollViewer Name="scroll" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Height="539" MaxHeight="540" CanContentScroll="True">
-        <StackPanel Name="MainStack" HorizontalAlignment="Center" Height="540" VerticalAlignment="Center" Width="1010" Margin="0">
-            
-            <Grid x:Name="CardsGrid" HorizontalAlignment="Center" Height="520" Margin="0" VerticalAlignment="Center" Width="990">
+            <StackPanel Name="MainStack" HorizontalAlignment="Center" Height="540" VerticalAlignment="Center" Width="1010" Margin="0">
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                <Grid x:Name="CardsGrid" HorizontalAlignment="Center" Height="520" Margin="0" VerticalAlignment="Center" Width="990">
 
-                <materialDesign:Card Name="myCard" Width="240" Height="250" Margin="5">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0" />
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="35" />
-                        </Grid.RowDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:Card Name="myCard" Width="240" Height="250" Margin="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="35" />
+                            </Grid.RowDefinitions>
 
 
-                        <StackPanel Grid.Row="1" Margin="8,10,8,0" >
-                            <TextBlock Foreground="Black" FontWeight="Bold"><Run Text="Cycling"/></TextBlock>
-                            <TextBlock Foreground="Black" TextWrapping="Wrap" VerticalAlignment="Center" Height="164"><Run Text="A great way to keep fit and forget xoi about the constant grind of IT."/></TextBlock>
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal" Margin="5,5,0,5" Width="220">
-                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Margin="5,0,0,0"><Run Text="DateTime"/></TextBlock>
-                            <materialDesign:PopupBox PlacementMode="RightAndAlignMiddles" Padding="2,0,2,0" HorizontalAlignment="Right" Margin="132,0,0,0" Foreground="Black">
-                                <StackPanel>
-                                    <Button Content="Удалить"/>
-                                </StackPanel>
-                            </materialDesign:PopupBox>
-                        </StackPanel>
+                            <StackPanel Grid.Row="1" Margin="8,10,8,0" >
+                                <TextBlock Foreground="Black" FontWeight="Bold"><Run Text="Cycling"/></TextBlock>
+                                <TextBlock Foreground="Black" TextWrapping="Wrap" VerticalAlignment="Center" Height="164"><Run Text="A great way to keep fit and forget xoi about the constant grind of IT."/></TextBlock>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal" Margin="0" Width="230">
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Margin="5,4,0,5" MaxWidth="160" Width="160"><Run Text="DateTime"/></TextBlock>
+                            </StackPanel>
 
-                    </Grid>
-                </materialDesign:Card>
+                        </Grid>
+                    </materialDesign:Card>
 
-            </Grid>
-            
-        </StackPanel>
+                </Grid>
+
+            </StackPanel>
         </ScrollViewer>
         <!--</ScrollViewer>-->
     </Grid>

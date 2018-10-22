@@ -47,16 +47,27 @@ namespace planner
             string objName = (string)((TextBox)e.OriginalSource).Name;
             if (objName == "contentTextBox")
             {
-                cardContent.Text = contentTextBox.Text;
-                counter.Text = contentTextBox.Text.Length.ToString() + "/400";
+                if (contentTextBox.Text.Length == 0)
+                    cardContent.Text = "Текст";
+                else
+                {
+                    cardContent.Text = contentTextBox.Text;
+                    counter.Text = contentTextBox.Text.Length.ToString() + "/400";
+                }
             }
             else
-                cardHeader.Text = headerBox.Text;
+                if (headerBox.Text.Length == 0)
+                    cardHeader.Text = "Заголовок";
+                else
+                    cardHeader.Text = headerBox.Text;
         }
 
         private void dateTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            cardDateTime.Text = dateTime.Text;
+            if (dateTime.Text.Length == 0)
+                cardDateTime.Text = "Дата и время";
+            else
+                cardDateTime.Text = dateTime.Text;
         }
     }
 }
