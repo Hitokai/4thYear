@@ -36,9 +36,6 @@
             <materialDesign:Card Padding="32" Margin="16">
                 <TextBlock Foreground="Black" TextWrapping="Wrap" Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design AppsfdfsfMy First Material Design AppsfdfsfMy First Material Design AppsfdfsfMy First Material Design AppsfdfsfMy First Material Design AppsfdfsfMy First Material Design AppsfdfsfMy First Material Design Appsfdfsf</TextBlock>
             </materialDesign:Card>
-            <Button x:Name="button" HorizontalAlignment="Left" Margin="64,293,0,0" Padding="0" VerticalAlignment="Top" Width="25" Height="25" Background="Wheat">
-                <materialDesign:PackIcon Kind="Close" Height="15" Width="15" Background="Black" />
-            </Button>
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
             <Grid.Effect>

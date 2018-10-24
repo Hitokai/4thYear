@@ -63,12 +63,11 @@ namespace planner.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;notes&gt;
-        ///  &lt;note&gt;
-        ///    &lt;label&gt;Test Card1&lt;/label&gt;
+        ///  &lt;note label=&quot;Test Card1&quot;&gt;
         ///    &lt;content&gt;С другой стороны начало повседневной работы по формированию позиции в значительной степени обуславливает создание соответствующий условий активизации. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции способствует подготовки и реализации существенных финансовых и административных условий.&lt;/content&gt;
         ///    &lt;dateTime&gt;19:30 11.11.2018&lt;/dateTime&gt;
         ///  &lt;/note&gt;
-        ///  &lt;n [остаток строки не уместился]&quot;;.
+        ///  &lt;note label=&quot;T [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string cards {
             get {

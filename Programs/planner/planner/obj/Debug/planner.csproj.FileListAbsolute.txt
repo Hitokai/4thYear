@@ -109,3 +109,4 @@ C:\Users\rooddie\Desktop\Колледж\Арефьев\planner\planner\obj\Debug
 C:\Users\rooddie\Desktop\Колледж\Арефьев\planner\planner\obj\Debug\planner.csproj.CopyComplete
 C:\Users\rooddie\Desktop\Колледж\Арефьев\planner\planner\obj\Debug\planner.exe
 C:\Users\rooddie\Desktop\Колледж\Арефьев\planner\planner\obj\Debug\planner.pdb
+A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\bin\Debug\Tulpep.NotificationWindow.dll

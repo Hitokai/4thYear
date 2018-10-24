@@ -24,10 +24,9 @@ namespace planner
     /// </summary>
     public partial class cardsGrid : UserControl
     {
-        private PackIcon _icon = new PackIcon { Kind = PackIconKind.Close };
-        Card[,] CardsMatrix;
-        Grid newGrid = new Grid();
-        XmlAddRead newXml = new XmlAddRead();
+        static Card[,] CardsMatrix;
+        static Grid newGrid = new Grid();
+        static XmlAddRead newXml = new XmlAddRead();
 
         public cardsGrid()
         {
@@ -52,10 +51,13 @@ namespace planner
             // обход всех узлов в корневом элементе
 
             LoadCards(newXml.CardsCount);
+            scroll.Content = newGrid;
         }
 
-        public void LoadCards(int cardCount)
+        public static void LoadCards(int cardCount)
         {
+            newGrid.Children.Clear();
+
             int cardsInRow = 0;
             int cardsInCol = 0;
 
@@ -110,9 +112,6 @@ namespace planner
 
                 }
             }
-            scroll.Content = newGrid;
-
-            
 
             int x = 0;
             int y = 0;
@@ -128,8 +127,8 @@ namespace planner
 
                 StackPanel miniPanel1 = new StackPanel();
                 miniPanel1.Margin = new Thickness(8, 5, 8, 0);
-                AddTextToHeaderAndLabel(miniPanel1, newXml.labels[i], 0);
-                AddTextToHeaderAndLabel(miniPanel1, newXml.contents[i], 1);
+                AddTextToHeaderAndLabel(miniPanel1, labels[i], 0);
+                AddTextToHeaderAndLabel(miniPanel1, contents[i], 1);
                 miniGrid.Children.Add(miniPanel1);
 
                 StackPanel miniPanel2 = new StackPanel();
@@ -137,19 +136,19 @@ namespace planner
                 miniPanel2.Orientation = Orientation.Horizontal;
                 Grid gridInMiniPanel2 = new Grid();
                 CreateColDef(gridInMiniPanel2, "*");
-                AddTextToTime(miniPanel2, newXml.dates[i]);
+                AddTextToTime(miniPanel2, dates[i]);
                 miniGrid.Children.Add(miniPanel2);
 
                 Button deleteButton = new Button();
+                PackIcon _icon = new PackIcon { Kind = PackIconKind.Close };
                 deleteButton.Width = 25;
                 deleteButton.Height = 25;
                 deleteButton.Foreground = new SolidColorBrush(Colors.Black);
                 deleteButton.Background = new SolidColorBrush(Colors.White);
                 deleteButton.BorderBrush = new SolidColorBrush(Colors.White);
-                deleteButton.FontSize = 1;
                 deleteButton.Padding = new Thickness(0);
                 deleteButton.Content = _icon;
-                deleteButton.HorizontalAlignment = HorizontalAlignment.Right;
+                deleteButton.HorizontalAlignment = HorizontalAlignment.Center;
                 deleteButton.Margin = new Thickness(50, -10, 0, 0);
                 deleteButton.Click += deleteCard;
                 deleteButton.Name = "id_" + newXml.ids[i];
@@ -180,7 +179,7 @@ namespace planner
             }
         }
 
-        private void deleteCard(object sender, RoutedEventArgs e)
+        private static void deleteCard(object sender, RoutedEventArgs e)
         {
             string cardId = (sender as Button).Name.Split('_')[1];
             newXml.DeleteCard(cardId);
@@ -189,7 +188,7 @@ namespace planner
             LoadCards(newXml.CardsCount);
         }
 
-        public void AddTextToHeaderAndLabel(StackPanel grid, string len, int num)
+        public static void AddTextToHeaderAndLabel(StackPanel grid, string len, int num)
         {
             TextBlock tb = new TextBlock();
             tb.Text = len;
@@ -209,7 +208,7 @@ namespace planner
             grid.Children.Add(tb);
         }
 
-        public void AddTextToTime(StackPanel grid, string date)
+        public static void AddTextToTime(StackPanel grid, string date)
         {
             TextBlock tb = new TextBlock();
             tb.Text = date;
@@ -219,7 +218,7 @@ namespace planner
             grid.Children.Add(tb);
         }
 
-        public void CreateRowDef(Grid grid, string len)
+        public static void CreateRowDef(Grid grid, string len)
         {
             var miniConverter = new GridLengthConverter();
             RowDefinition miniRow = new RowDefinition();
@@ -228,7 +227,7 @@ namespace planner
             grid.RowDefinitions.Add(miniRow);
         }
 
-        public void CreateColDef(Grid grid, string len)
+        public static void CreateColDef(Grid grid, string len)
         {
             var miniConverter = new GridLengthConverter();
             ColumnDefinition miniRow = new ColumnDefinition();

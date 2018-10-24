@@ -16,9 +16,9 @@ namespace planner
         public string Content { get; set; }
         public string DateTime { get; set; }
         public string Id { get; set; }
-        public List<string> labels = new List<string>();
-        public List<string> contents = new List<string>();
-        public List<string> dates = new List<string>();
+        public static List<string> labels = new List<string>();
+        public static List<string> contents = new List<string>();
+        public static List<string> dates = new List<string>();
         public List<string> ids = new List<string>();
         public int CardsCount;
 
