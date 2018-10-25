@@ -110,3 +110,8 @@ C:\Users\rooddie\Desktop\Колледж\Арефьев\planner\planner\obj\Debug
 C:\Users\rooddie\Desktop\Колледж\Арефьев\planner\planner\obj\Debug\planner.exe
 C:\Users\rooddie\Desktop\Колледж\Арефьев\planner\planner\obj\Debug\planner.pdb
 A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\rooddie\Desktop\planner\planner\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\Resources\lang.baml
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\settings.g.cs
+C:\Users\rooddie\Desktop\planner\planner\obj\Debug\settings.baml

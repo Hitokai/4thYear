@@ -42,11 +42,12 @@ namespace planner
             GridMain.Children.Add(usc);
 
             notify.Icon = SystemIcons.Application;
-            notify.Visible = true;
+            notify.Visible = false;
             notify.BalloonTipText = "Окно было свёрнуто";
             notify.DoubleClick +=
                 delegate(object sender, EventArgs args)
                 {
+                    notify.Visible = false;
                     this.Show();
                     this.WindowState = WindowState.Normal;
                 };
@@ -84,6 +85,10 @@ namespace planner
                     usc = new createCard();
                     GridMain.Children.Add(usc);
                     break;
+                case "ItemSettings":
+                    usc = new settings();
+                    GridMain.Children.Add(usc);
+                    break;
                 default:
                     break;
             }
@@ -106,8 +111,11 @@ namespace planner
         private void MinimizeWindow_OnClickButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+            notify.Visible = true;
+            newNotifier.TitleText = "Planner";
+            newNotifier.ContentText = "Приложение свёрнуто в трей";
+            newNotifier.Popup();
             this.Hide();
-            notify.ShowBalloonTip(1000);
         }
 
 
@@ -125,4 +133,5 @@ namespace planner
         }
 
     }
+
 }

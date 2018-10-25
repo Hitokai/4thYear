@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:planner.Resources"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="header">Planner</v:String>
+    <v:String x:Key="menuHome">Home</v:String>
+    <v:String x:Key="menuCreate">Create note</v:String>
+    <v:String x:Key="menuSettings">Settings</v:String>
+
+    <v:String x:Key="createHeader">Header</v:String>
+    <v:String x:Key="createText">Text</v:String>
+    <v:String x:Key="createDate">Date of event</v:String>
+
+    <v:String x:Key="settingsLang">Language</v:String>
+
+</ResourceDictionary>

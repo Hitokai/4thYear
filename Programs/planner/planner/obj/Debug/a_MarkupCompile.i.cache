@@ -1,4 +1,4 @@
-﻿planner
+﻿a
 
 
 winexe
@@ -16,5 +16,5 @@ C:\Users\rooddie\Desktop\planner\planner\App.xaml
 24982733416
 MainWindow.xaml;createCard.xaml;cardsGrid.xaml;Resources\lang.ru-RU.xaml;Resources\lang.xaml;settings.xaml;
 
-False
+True
 

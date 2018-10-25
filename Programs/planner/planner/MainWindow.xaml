@@ -65,7 +65,8 @@
                 </Button>
 
             </StackPanel>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">ПЛАНИРОВЩИК</TextBlock>
+            <TextBlock HorizontalAlignment="Center" Text="{DynamicResource header}" VerticalAlignment="Center" FontSize="22"/>
+            
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
             <Grid.Effect>
@@ -94,19 +95,19 @@
                     <ListViewItem x:Name="ItemHome" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Главная" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="{DynamicResource menuHome}" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemCreate" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Pencil" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Создать" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="{DynamicResource menuCreate}" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem Height="60" x:Name="ItemSettings">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Settings" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Настройки" VerticalAlignment="Center"  Margin="20 10"/>
+                            <TextBlock Text="{DynamicResource menuSettings}" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <!--<ListViewItem Height="60">
