@@ -27,15 +27,16 @@ namespace saper
     public partial class MainWindow : Window
     {
 
-        int setFlagsCount;
-        int openButtonsCount;
-        int sec, min, hours;
+        int setFlagsCount; // Счётчик поставленных флагов
+        int openButtonsCount; // Счётчик открытых клеток
+        int sec, min, hours; // Переменные для хранения секунд, минут, часов
+
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent();
-            timer.Tick += new EventHandler(timerTick);
+            timer.Tick += new EventHandler(TickTimer);
             timer.Interval = new TimeSpan(0, 0, 1);
         }
 
@@ -60,6 +61,7 @@ namespace saper
                 minesCoords = MinesCoord(18);
                 GenerateGrid(18);
             }
+            bombsLabel.Content = "Бомбы: " + minesCoords.Length;
         }
 
         // Генерация поля для игры в зависимости от выбранного размера
@@ -71,7 +73,6 @@ namespace saper
             timer.Start();
 
             setFlagsCount = 0;
-            flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
 
             buttonMatrix = new Button[size, size];
             gameGrid.RowDefinitions.Clear();
@@ -143,6 +144,7 @@ namespace saper
             }    
         }
 
+        // Добавление флагов при нажатии на правую кнопку мыши
         private void FlagButton(object sender, MouseEventArgs e)
         {
             Button currBtn = (sender as Button);
@@ -158,16 +160,19 @@ namespace saper
                 currBtn.Content = "◄";
                 currBtn.Foreground = new SolidColorBrush(Colors.Red);
                 setFlagsCount++;
-                flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
+            }
+            else if (currBtn.Content == "◄")
+            {
+                currBtn.Content = "?";
+                currBtn.Foreground = new SolidColorBrush(Colors.Black);
+                setFlagsCount--;
+                if (gridNums[row, col] == 99)
+                    openButtonsCount--;
             }
             else
             {
                 currBtn.Content = null;
                 currBtn.Foreground = new SolidColorBrush(Colors.Gray);
-                setFlagsCount--;
-                flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
-                if (gridNums[row, col] == 99)
-                    openButtonsCount--;
             }
         }
 
@@ -187,6 +192,12 @@ namespace saper
                 ShowButtons(row - 1, col, size);
                 ShowButtons(row, col + 1, size);
                 ShowButtons(row + 1, col, size);
+
+                // Открывает клетки по диагонали
+                ShowButtons(row + 1, col - 1, size);
+                ShowButtons(row + 1, col + 1, size);
+                ShowButtons(row - 1, col + 1, size);
+                ShowButtons(row - 1, col - 1, size);
             }
             else if (gridNums[row, col] < 100 && gridNums[row, col] != -1)
             {
@@ -195,7 +206,6 @@ namespace saper
                     setFlagsCount -= 1;
                     if (setFlagsCount < 0)
                         setFlagsCount = 0;
-                    flagsLabel.Content = "Флаги: " + setFlagsCount.ToString();
                 }
 
                 buttonMatrix[row - 1, col - 1].Content = gridNums[row, col];
@@ -225,6 +235,7 @@ namespace saper
                     }
                 }
             }
+            bombsLabel.Content = "Бомбы: " + minesCoords.Length;
 
         }
 
@@ -237,6 +248,7 @@ namespace saper
                 {
                     if (gridNums[i, j] == 99)
                     {
+                        buttonMatrix[i - 1, j - 1].Background = new SolidColorBrush(Colors.Red);
                         BitmapImage bomb = new BitmapImage();
                         bomb.BeginInit();
                         bomb.UriSource = new Uri("/Resources/bomb.png", UriKind.RelativeOrAbsolute);
@@ -247,7 +259,8 @@ namespace saper
             }
         }
 
-        private void timerTick(object sender, EventArgs e)
+        // Таймер
+        private void TickTimer(object sender, EventArgs e)
         {
             sec++;
             if (sec == 60)

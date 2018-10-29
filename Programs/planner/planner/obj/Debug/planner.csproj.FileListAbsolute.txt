@@ -115,3 +115,7 @@ C:\Users\rooddie\Desktop\planner\planner\obj\Debug\Resources\lang.ru-RU.baml
 C:\Users\rooddie\Desktop\planner\planner\obj\Debug\Resources\lang.baml
 C:\Users\rooddie\Desktop\planner\planner\obj\Debug\settings.g.cs
 C:\Users\rooddie\Desktop\planner\planner\obj\Debug\settings.baml
+A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\obj\Debug\settings.g.cs
+A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\obj\Debug\Resources\lang.ru-RU.baml
+A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\obj\Debug\Resources\lang.baml
+A:\MyGoogleDrive\4 курс\Aref\Programs\planner\planner\obj\Debug\settings.baml

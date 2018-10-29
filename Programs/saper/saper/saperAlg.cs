@@ -64,6 +64,7 @@ namespace saper
             return bombCoordList;
         }
 
+        // Проверка координат бомб
         public static bool CheckBombsCoord(int[][] coords,int[] newCoords, int size)
         {
             for (int i = 0; i < size; i++)

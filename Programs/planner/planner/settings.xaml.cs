@@ -26,7 +26,7 @@ namespace planner
             InitializeComponent();
             App.LanguageChanged += LanguageChanged;
 
-            CultureInfo currLang = App.Language;
+            CultureInfo currLang = App.Language; // Текущий язык прграммы
 
             //Заполняем меню смены языка:
             menuLanguage.Items.Clear();
@@ -41,6 +41,7 @@ namespace planner
             }
         }
 
+        // Метод проверяющий изменение языка
         private void LanguageChanged(Object sender, EventArgs e)
         {
             CultureInfo currLang = App.Language;
@@ -53,6 +54,7 @@ namespace planner
             }
         }
 
+        // Метод выполняющий изменение языка
         private void ChangeLanguageClick(Object sender, EventArgs e)
         {
             MenuItem mi = sender as MenuItem;

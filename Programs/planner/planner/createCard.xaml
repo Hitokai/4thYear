@@ -96,7 +96,7 @@
 
 
                         <StackPanel Grid.Row="1" Margin="8,10,8,0" >
-                            <TextBlock Name="cardHeader" Foreground="Black" FontWeight="Bold" TextAlignment="Center" FontSize="14" Text="{DynamicResource createHeader}"/>
+                            <TextBlock Name="cardHeader" Foreground="Black" FontWeight="Bold" TextAlignment="Center" FontSize="14" Text="{DynamicResource createHeader}" TextDecorations="Underline"/>
                             <ScrollViewer MaxHeight="180" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True" Margin="3,10,5,3">
                                 <TextBlock  Name="cardContent" Foreground="Black" TextWrapping="Wrap"  VerticalAlignment="Center" Text="{DynamicResource createText}"/>
                             </ScrollViewer>

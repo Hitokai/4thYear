@@ -10,7 +10,7 @@ using System.Windows;
 namespace planner
 {
     /// <summary>
-    /// Interação lógica para App.xaml
+    /// 
     /// </summary>
     public partial class App : Application
     {
@@ -29,6 +29,7 @@ namespace planner
             m_Languages.Clear();
             m_Languages.Add(new CultureInfo("en-US")); //Нейтральная культура для этого проекта
             m_Languages.Add(new CultureInfo("ru-RU"));
+            App.LanguageChanged += App_LanguageChanged;
         }
 
         public static event EventHandler LanguageChanged;

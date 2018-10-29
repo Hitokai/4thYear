@@ -9,7 +9,7 @@
              Height="540" Width="1010" Background="White" Foreground="Black">
     <Grid>
         <TextBlock Margin="10,10,935,510" Text="{DynamicResource settingsLang}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
-        <ComboBox Name="menuLanguage" Margin="80,10,779,510" Height="20">
+        <ComboBox Name="menuLanguage" Margin="80,10,779,510" Height="20" FontSize="15">
             <materialDesign:ComboBoxPopup></materialDesign:ComboBoxPopup>
         </ComboBox>
     </Grid>

@@ -1,0 +1,17 @@
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\bin\Debug\Calculator228.exe.config
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\bin\Debug\Calculator228.exe
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\bin\Debug\Calculator228.pdb
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\bin\Debug\ELW.Library.Math.pdb
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator2.csprojAssemblyReference.cache
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\MainWindow.g.cs
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\App.g.cs
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator228_MarkupCompile.cache
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator228_MarkupCompile.lref
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\MainWindow.baml
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator228.g.resources
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator228.Properties.Resources.resources
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator2.csproj.GenerateResource.cache
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator2.csproj.CoreCompileInputs.cache
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator2.csproj.CopyComplete
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator228.exe
+A:\MyGoogleDrive\4 курс\Aref\Programs\Calculator2\Calculator228\obj\Debug\Calculator228.pdb

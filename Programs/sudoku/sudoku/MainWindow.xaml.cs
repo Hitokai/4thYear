@@ -23,20 +23,21 @@ namespace sudoku
     /// </summary>
     public partial class MainWindow : Window
     {
-        Button[,] listButtons = new Button[9, 9];
-        int[,] newGrid = new int[9, 9];
+        Button[,] listButtons = new Button[9, 9]; // массив кнопок
+        int[,] newGrid = new int[9, 9]; // массив игрового поля
 
         public MainWindow()
         {
             InitializeComponent();
+            // Создание кнопок
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
                     Button button = new Button();
                     button.Name = "btn" + i.ToString() + j.ToString();
-                    button.Click += button_Click;
-                    button.MouseRightButtonUp += rightClick;
+                    button.Click += ClickOnLeftButton;
+                    button.MouseRightButtonDown += ClickOnRightButton;
                     button.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.2 };
                     button.FontSize = 26;
                     button.Foreground = new SolidColorBrush(Colors.Red);
@@ -49,7 +50,8 @@ namespace sudoku
             }
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        // Обработчик нажитий левой кнопкой мыши на ячейку
+        private void ClickOnLeftButton(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Content;
             if (data == "9" || data == "-")
@@ -61,25 +63,27 @@ namespace sudoku
             int x = int.Parse(button.Name.Substring(3, 1));
             int y = int.Parse(button.Name.Substring(4, 1));
             newGrid[x, y] = Convert.ToInt32(numb);
-            finishGame();
+            FinishGame();
         }
 
-        private void rightClick(object sender, MouseButtonEventArgs e)
+        // Обработчик нажитий правой кнопкой мыши на ячейку
+        private void ClickOnRightButton(object sender, MouseEventArgs e)
         {
-            string data = (string)((Button)e.OriginalSource).Content;
+            Button currBtn = (sender as Button);
+            string data = currBtn.Content.ToString();
             if (data == "1" || data == "-")
-                ((Button)e.OriginalSource).Content = "9";
+                currBtn.Content = "9";
             else
-                ((Button)e.OriginalSource).Content = (Convert.ToInt32(data) - 1).ToString();
-            string numb = (string)((Button)e.OriginalSource).Content;
-            Button button = (Button)sender;
-            int x = int.Parse(button.Name.Substring(3, 1));
-            int y = int.Parse(button.Name.Substring(4, 1));
+                currBtn.Content = (Convert.ToInt32(data) - 1).ToString();
+            string numb = currBtn.Content.ToString();
+            int x = int.Parse(currBtn.Name.Substring(3, 1));
+            int y = int.Parse(currBtn.Name.Substring(4, 1));
             newGrid[x, y] = Convert.ToInt32(numb);
-            finishGame();
+            FinishGame();
         }
 
-        private void createContent(object sender, RoutedEventArgs e)
+        // Создание цифр и помещение их в кнопки
+        private void CreateContent(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "";
             initGrid(grid);
@@ -105,9 +109,10 @@ namespace sudoku
             btnStart.IsEnabled = false;
         }
 
-        private void finishGame()
+        // Проверка поля. Если массивы равны - закончить игру.
+        private void FinishGame()
         {
-            bool res = isEqual();
+            bool res = IsEqual();
             if (res)
             {
                 resultLabel.Content = "Ты победил!";
@@ -126,7 +131,8 @@ namespace sudoku
             }
         }
 
-        private bool isEqual()
+        // Сравнивание двух массивов, если сумма равна 81, то это победа
+        private bool IsEqual()
         {
             int count = 0;
             for (int i = 0; i < 9; i++)

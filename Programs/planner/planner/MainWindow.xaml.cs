@@ -25,22 +25,24 @@ using static planner.XmlAddRead;
 namespace planner
 {
     /// <summary>
-    /// Interação lógica para MainWindow.xam
+    /// 
     /// </summary>
     public partial class MainWindow : Window
     {
 
-        PopupNotifier newNotifier = new PopupNotifier();
+        PopupNotifier newNotifier = new PopupNotifier(); // Экземпляр объекта оповещений
         winForms.NotifyIcon notify = new winForms.NotifyIcon();
 
         public MainWindow()
         {
             InitializeComponent();
 
+            // Создание экземпляра объекта UserControl для смены содержимого Grid
             UserControl usc = null;
             usc = new cardsGrid();
             GridMain.Children.Add(usc);
 
+            // Оповещение при сворачивании окна в трей
             notify.Icon = SystemIcons.Application;
             notify.Visible = false;
             notify.BalloonTipText = "Окно было свёрнуто";
@@ -52,24 +54,28 @@ namespace planner
                     this.WindowState = WindowState.Normal;
                 };
 
+            // Таймер проверяющий соответствие времени системы и событий в планировщике
             DispatcherTimer dispatcher = new DispatcherTimer();
             dispatcher.Tick += new EventHandler(Notifications);
             dispatcher.Interval = new TimeSpan(0, 0, 1);
             dispatcher.Start();
         }
         
+        // Метод нажатия на кнопку открытия бокового меню
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Visible;
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
         }
 
+        // Метод нажатия на кнопку закрытия бокового меню
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             ButtonOpenMenu.Visibility = Visibility.Visible;
         }
 
+        // Метод для изменения содержимого Grid при выборе пунктов меню
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UserControl usc = null;
@@ -94,11 +100,13 @@ namespace planner
             }
         }
 
+        // Закрытие окна
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+        // Возможность перетаскивания окна по экрану
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -108,6 +116,7 @@ namespace planner
             catch { }
         }
 
+        // Сворачивание окна в трей
         private void MinimizeWindow_OnClickButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -118,7 +127,7 @@ namespace planner
             this.Hide();
         }
 
-
+        // Оповещение о событии
         private void Notifications(object sender, EventArgs  e)
         {
             string currTime = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();

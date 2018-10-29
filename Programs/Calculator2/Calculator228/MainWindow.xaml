@@ -5,12 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator228"
         mc:Ignorable="d"
-        Title="Калькулятор" Height="152.256" Width="280">
+        Title="Калькулятор" Height="250" Width="500">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="0.38"/>
+            <GradientStop Color="#FF49A4FF" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image x:Name="image" Source="C:\Users\prakt03\Desktop\background.jpg" Stretch="Fill" Grid.RowSpan="1" OpacityMask="{x:Null}"/>
 
-        <Label x:Name="result" Content="" Margin="40,53,32,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" Margin="40,10,32,0" TextWrapping="Wrap" Text="&#xD;&#xA;" Height="25" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Посчитать" Margin="86,84,86,0" Click="button_Click" Height="22" VerticalAlignment="Top"/>
+        <Label x:Name="result" Content="" Margin="40,113,40,0" VerticalAlignment="Top" Height="24"/>
+        <TextBox x:Name="textBox" Margin="40,60,40,0" TextWrapping="Wrap" Text="&#xD;&#xA;" Height="25" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Посчитать" Margin="140,179,140,18" Click="button_Click" Background="#FFDDEDFF"/>
 
     </Grid>
 </Window>

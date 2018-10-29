@@ -18,7 +18,7 @@ using static planner.XmlAddRead;
 namespace planner
 {
     /// <summary>
-    /// Interação lógica para UserControlCreate.xam
+    /// 
     /// </summary>
     public partial class createCard : UserControl
     {
@@ -27,6 +27,7 @@ namespace planner
             InitializeComponent();
         }
 
+        // Добавление записей
         private void cardAddButton_Click(object sender, RoutedEventArgs e)
         {
             string headerText = headerBox.Text;
@@ -42,6 +43,7 @@ namespace planner
             
         }
 
+        // Обновление содержимого карточки для предпросмотра
         private void contentTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string objName = (string)((TextBox)e.OriginalSource).Name;
