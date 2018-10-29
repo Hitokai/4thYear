@@ -1,6 +1,11 @@
 Список программ
 ---------------
-Калькулятор1, Калькулятор2(совместно с Грингоф Олегом), Пятнашки, Судоку, Сапер(совместно с Грингоф Олегом), Планировщик(совместно с Грингоф Олегом)
+* Калькулятор1
+* Калькулятор2(совместно с Грингоф Олегом)
+* Пятнашки
+* Судоку
+* Сапер(совместно с Грингоф Олегом)
+* Планировщик(совместно с Грингоф Олегом)
 
 Запуск программ
 ---------------
@@ -8,7 +13,9 @@
 
 Дополнительные материалы
 ------------------------
-ELW.Library.Math, Wpf.Tollkit, MaterialDesign
+* [ELW.Library.Math](https://github.com/denisgav/HDL_ANTLR4/tree/master/ELW.Library.Math)
+* [Wpf.Tollkit](https://github.com/xceedsoftware/wpftoolkit)
+* [MaterialDesign](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)
 
 Выполнил
 --------
