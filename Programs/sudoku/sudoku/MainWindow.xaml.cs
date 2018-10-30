@@ -54,7 +54,7 @@ namespace sudoku
         private void ClickOnLeftButton(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Content;
-            if (data == "9" || data == "-")
+            if (data == "9" || data == null)
                 ((Button)e.OriginalSource).Content = "1";
             else
                 ((Button)e.OriginalSource).Content = (Convert.ToInt32(data) + 1).ToString();
@@ -70,8 +70,8 @@ namespace sudoku
         private void ClickOnRightButton(object sender, MouseEventArgs e)
         {
             Button currBtn = (sender as Button);
-            string data = currBtn.Content.ToString();
-            if (data == "1" || data == "-")
+            var data = currBtn.Content;
+            if (data == null || data.ToString() == "1")
                 currBtn.Content = "9";
             else
                 currBtn.Content = (Convert.ToInt32(data) - 1).ToString();
@@ -92,7 +92,7 @@ namespace sudoku
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    listButtons[i, j].Content = "-";
+                    listButtons[i, j].Content = null;
                     listButtons[i, j].Visibility = Visibility.Visible;
                     listButtons[i, j].IsEnabled = true;
                     Random chance = new Random(Guid.NewGuid().GetHashCode());
