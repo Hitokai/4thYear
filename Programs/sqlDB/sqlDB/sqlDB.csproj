@@ -65,10 +65,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DBConnect.cs" />
-    <Compile Include="login_template.xaml.cs">
+    <Compile Include="LogRegControls\login_template.xaml.cs">
       <DependentUpon>login_template.xaml</DependentUpon>
     </Compile>
-    <Compile Include="reg_page.xaml.cs">
+    <Compile Include="LogRegControls\reg_page.xaml.cs">
       <DependentUpon>reg_page.xaml</DependentUpon>
     </Compile>
     <Page Include="login_page.xaml">
@@ -83,16 +83,23 @@
       <DependentUpon>login_page.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="login_template.xaml">
+    <Page Include="LogRegControls\login_template.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="reg_page.xaml">
+    <Page Include="LogRegControls\reg_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mainDbPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mainDbPage.xaml.cs">
+      <DependentUpon>mainDbPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -119,5 +126,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

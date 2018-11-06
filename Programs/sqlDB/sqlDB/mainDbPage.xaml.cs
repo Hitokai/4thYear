@@ -10,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace sqlDB
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для mainDbPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class mainDbPage : Window
     {
-        public MainWindow()
-
+        public mainDbPage()
         {
             InitializeComponent();
-            UserControl usc = null;
-            usc = new login_template();
-            pageContent.Children.Add(usc);
         }
     }
 }

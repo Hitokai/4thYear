@@ -13,10 +13,6 @@ C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\sql
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\sqlDB.csproj.CoreCompileInputs.cache
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\sqlDB.exe
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\sqlDB.pdb
-C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\reg_page.g.cs
-C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\reg_page.baml
-C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\login_template.g.cs
-C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\login_template.baml
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\bin\Debug\MaterialDesignColors.dll
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\bin\Debug\MaterialDesignThemes.Wpf.pdb
@@ -24,3 +20,7 @@ C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\bin\Debug\Mat
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\App.baml
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\sqlDB.csproj.CopyComplete
 C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\bin\Debug\MySql.Data.dll
+C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\LogRegControls\login_template.g.cs
+C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\LogRegControls\reg_page.g.cs
+C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\LogRegControls\login_template.baml
+C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\LogRegControls\reg_page.baml
