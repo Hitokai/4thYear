@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\obj\Debug\
+C:\Users\rooddie\Desktop\sqlDB\sqlDB\obj\Debug\
 sqlDB
 none
 false
 DEBUG;TRACE
-C:\Users\rooddie\Desktop\Колледж\Арефьев\sqlDB\sqlDB\App.xaml
-4498514518
+C:\Users\rooddie\Desktop\sqlDB\sqlDB\App.xaml
+5169995241
 
-13-1942901156
-16-247798212
-login_page.xaml;LogRegControls\login_template.xaml;LogRegControls\reg_page.xaml;mainDbPage.xaml;
+16524773705
+75297006002
+login_page.xaml;LogRegControls\login_template.xaml;LogRegControls\reg_page.xaml;MainDBControls\dbView.xaml;mainDbPage.xaml;
 
-False
+True
 

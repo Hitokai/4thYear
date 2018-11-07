@@ -3,10 +3,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:sqlDB"
         mc:Ignorable="d"
-        Title="mainDbPage" Height="450" Width="800">
+        Title="mainDbPage" Height="720" Width="1280">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320*"/>
+            <ColumnDefinition Width="950*"/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="320" Background="LightSteelBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="525*"/>
+                <RowDefinition Height="80*"/>
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="320" Background="LightSkyBlue" Grid.ColumnSpan="2">
+                <Grid Height="80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="19*"/>
+                        <ColumnDefinition Width="45*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="10,10,26,10" Source="Resources/user2.png" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Margin="10" VerticalAlignment="Center" FontSize="16"/>
+                </Grid>
+
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="508" Margin="10,10,0,0" VerticalAlignment="Top" Width="300" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <StackPanel HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="320" Grid.Row="2" Background="LightSkyBlue" Grid.ColumnSpan="2"/>
+            <Grid HorizontalAlignment="Left" Height="508" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="250*"/>
+                </Grid.RowDefinitions>
+                <Button Content="Главная" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25"/>
+                <Button Name="driversViewBtn" Content="Водители" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="1" Click="ViewBtn_Click"/>
+                <Button Name="carsViewBtn" Content="Автомобили" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="2" Click="ViewBtn_Click"/>
+                <Button Name="trailersViewBtn" Content="Прицепы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="3" Click="ViewBtn_Click"/>
+                <Button Name="cargoViewBtn" Content="Груз" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="4" Click="ViewBtn_Click"/>
+            </Grid>
+        </Grid>
+        <Grid Name="pageContent" Grid.Column="1" HorizontalAlignment="Left" Height="669" Margin="10,10,0,0" VerticalAlignment="Top" Width="931"/>
+
     </Grid>
 </Window>

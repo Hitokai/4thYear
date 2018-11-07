@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,15 +19,23 @@ namespace sqlDB
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class login_page : Window
     {
-        public MainWindow()
-
+        public login_page()
         {
             InitializeComponent();
             UserControl usc = null;
             usc = new login_template();
             pageContent.Children.Add(usc);
+
+            Messenger.Default.Register<NotificationMessage>(this, (nm) =>
+            {
+                if (nm.Notification == "CloseWindowsBoundToMe")
+                {
+                    if (nm.Sender == this.DataContext)
+                        this.Close();
+                }
+            });
         }
     }
 }

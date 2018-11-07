@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ using System.Windows.Shapes;
 using static sqlDB.DBConnect;
 
 namespace sqlDB
+
 {
     /// <summary>
     /// Логика взаимодействия для login_template.xaml
@@ -46,6 +49,16 @@ namespace sqlDB
 
             loginBlock.Clear();
             passwordBlock.Clear();
+
+            Window mainWin = new mainDbPage();
+            mainWin.Show();
+        }
+
+        public void notifyWindowToClose()
+        {
+            Messenger.Default.Send<NotificationMessage>(
+                new NotificationMessage(this, "CloseWindowsBoundToMe")
+            );
         }
     }
 }

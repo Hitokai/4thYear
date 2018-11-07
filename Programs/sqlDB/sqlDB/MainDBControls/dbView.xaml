@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="sqlDB.MainDBControls.dbView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:sqlDB.MainDBControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="669" d:DesignWidth="931">
+    <Grid>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="669" VerticalAlignment="Top" Width="931" CanUserSortColumns="True"
+  CanUserAddRows="False" ItemsSource="{Binding }"/>
+
+    </Grid>
+</UserControl>

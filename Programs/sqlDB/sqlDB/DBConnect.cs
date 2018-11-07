@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using MySql.Data.MySqlClient;
 
 namespace sqlDB
 {
     class DBConnect
     {
+        
         static string connStr = "server=rooddie.ddns.net;user=root;database=cdb;password=basavka303;";
+        static MySqlConnection conn = new MySqlConnection(connStr);
 
         public static void RegFunc(string newLogin, string newPassword, string newEmail, string newFname, string newLname)
         {
@@ -47,6 +51,31 @@ namespace sqlDB
 
             reader.Close(); // закрываем reader
             // закрываем соединение с БД
+            conn.Close();
+        }
+
+        public static void LoadToDataGrid(string table, DataGrid dataGrid)
+        {
+            
+            string sql = String.Format(@"SELECT 
+            driver_id as 'ID водителя',
+            fname as 'Фамилия',
+            lname as 'Имя',
+            mname as 'Отчество',
+            category_id as 'Номер категории',
+            passport_num as 'Номер паспорта',
+            date_of_birth as 'Дата рождения',
+            car_id as 'ID машины' FROM {0}", table);
+
+            conn.Open();
+
+            MySqlCommand cmdSel = new MySqlCommand(sql, conn);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            da.Fill(dt);
+
+            dataGrid.DataContext = dt;
+
             conn.Close();
         }
     }
