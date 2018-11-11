@@ -30,16 +30,32 @@ namespace sqlDB
             pageContent.Children.Clear();
             UserControl usc = null;
 
-            if (((Button)sender as Button).Name == "driversViewBtn")
+            if (((Button) sender as Button).Name == "driversViewBtn")
+            {
                 usc = new dbView("drivers");
-            if (((Button)sender as Button).Name == "carsViewBtn")
+                DBConnect.tableName = "drivers";
+            }
+
+            if (((Button) sender as Button).Name == "carsViewBtn")
+            {
                 usc = new dbView("cars");
-            if (((Button)sender as Button).Name == "trailersViewBtn")
+                DBConnect.tableName = "cars";
+            }
+                
+            if (((Button) sender as Button).Name == "trailersViewBtn")
+            {
                 usc = new dbView("trailers");
-            if (((Button)sender as Button).Name == "cargoViewBtn")
+                DBConnect.tableName = "trailers";
+            }
+                
+            if (((Button) sender as Button).Name == "cargoViewBtn")
+            {
                 usc = new dbView("drivers");
+                DBConnect.tableName = "cargo";
+            }
 
             pageContent.Children.Add(usc);
+            
         }
     }
 }

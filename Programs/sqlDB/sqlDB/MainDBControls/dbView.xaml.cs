@@ -28,5 +28,18 @@ namespace sqlDB.MainDBControls
             DBConnect.LoadToDataGrid(table, dataGrid);
 
         }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DBConnect.UpdateDataGrid(dataGrid);
+        }
+
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int parse = dataGrid.SelectedIndex;
+            DataRowView rowView = dataGrid.SelectedValue as DataRowView;
+            
+            MessageBox.Show(parse.ToString() + rowView[0].ToString());
+        }
     }
 }

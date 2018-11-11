@@ -45,13 +45,17 @@ namespace sqlDB
             string login = loginBlock.Text;
             string password = passwordBlock.Password;
 
-            LoginFunc(login, password);
-
-            loginBlock.Clear();
-            passwordBlock.Clear();
-
-            Window mainWin = new mainDbPage();
-            mainWin.Show();
+            bool res = LoginFunc(login, password);
+            if (res)
+            {
+                Window mainWin = new mainDbPage();
+                mainWin.Show();
+            }
+            else
+            {
+                MessageBox.Show("Неверное имя пользователя или пароль");
+            }
+               
         }
 
         public void notifyWindowToClose()

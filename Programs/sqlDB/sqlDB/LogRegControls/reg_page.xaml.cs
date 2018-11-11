@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,13 +44,33 @@ namespace sqlDB
             string fname = fnameBlock.Text;
             string lname = lnameBlock.Text;
 
-            sqlDB.DBConnect.RegFunc(login, password, email, fname, lname);
+            if (IsValidEmailAddress(email) == false)
+                MessageBox.Show("Неверный адресс электронной почты");
+            else
+            {
+                try
+                {
+                    sqlDB.DBConnect.RegFunc(login, password, email, fname, lname);
 
-            loginBlock.Clear();
-            passwordBlock.Clear();
-            emailBlock.Clear();
-            fnameBlock.Clear();
-            lnameBlock.Clear();
+                    UserControl usc = null;
+                    pageContent.Children.Clear();
+                    pageContent.RowDefinitions.Clear();
+
+                    usc = new login_template();
+                    pageContent.Children.Add(usc);
+                }
+                catch
+                {
+                    MessageBox.Show("Пользователь с данным логином или email уже существует.");
+                    passwordBlock.Clear();
+                }                
+            }
+        }
+
+        public static bool IsValidEmailAddress(string s)
+        {
+            Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            return regex.IsMatch(s);
         }
     }
 }
