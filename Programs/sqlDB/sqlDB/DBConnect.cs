@@ -63,9 +63,9 @@ namespace sqlDB
             if (table == "drivers")
             {
                 sql =
-                    @"SELECT fname as 'Имя', lname as 'Фамилия', mname as 'Отчество', passport_num as 'Номер паспорта'," +
-                    "date_of_birth as 'Дата рождения', category as 'Категория прав', model as 'Автомобиль' FROM {0} " +
-                    "inner join rights_category on category_id = id_category inner join cars on cars.car_id = drivers.car_id";
+                    @"SELECT fname as 'Имя', lname as 'Фамилия', mname as 'Отчество', passport_num as 'Номер паспорта', age as 'Возраст', 
+                      category as 'Категория прав', model as 'Автомобиль' FROM drivers inner join rights_category on category_id = id_category
+                      inner join cars on cars.car_id = drivers.car_id";
             }
 
             else if (table == "cars")
@@ -78,7 +78,7 @@ namespace sqlDB
 
             else if (table == "trailers")
             {
-                sql = 
+                
             }
 
             /*string sql = String.Format(@"SELECT 

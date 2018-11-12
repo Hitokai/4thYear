@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 A:\MyGoogleDrive\4 курс\Aref\Programs\sqlDB\sqlDB\App.xaml
-5169995241
+9-1105609790
 
-122011211204
+16-1573106799
 75-435437401
-login_page.xaml;LogRegControls\login_template.xaml;LogRegControls\reg_page.xaml;MainDBControls\dbView.xaml;mainDbPage.xaml;
+EditControls\create.xaml;EditControls\delete.xaml;EditControls\update.xaml;editPages.xaml;login_page.xaml;LogRegControls\login_template.xaml;LogRegControls\reg_page.xaml;MainDBControls\dbView.xaml;mainDbPage.xaml;
 
 False
 

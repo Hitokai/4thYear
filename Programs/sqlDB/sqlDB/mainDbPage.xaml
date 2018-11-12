@@ -19,7 +19,7 @@
                 <RowDefinition Height="525*"/>
                 <RowDefinition Height="80*"/>
             </Grid.RowDefinitions>
-            <StackPanel HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="320" Background="LightSkyBlue" Grid.ColumnSpan="2">
+            <StackPanel HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="320" Background="LightSkyBlue">
                 <Grid Height="80">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="19*"/>
@@ -48,7 +48,7 @@
                 <Button Name="cargoViewBtn" Content="Груз" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="4" Click="ViewBtn_Click"/>
             </Grid>
         </Grid>
-        <Grid Name="pageContent" Grid.Column="1" HorizontalAlignment="Center" Height="669" Margin="10" VerticalAlignment="Center" Width="931"/>
+        <Grid Name="pageContent" Grid.Column="1" HorizontalAlignment="Center" Height="689" VerticalAlignment="Center" Width="951"/>
 
     </Grid>
 </Window>

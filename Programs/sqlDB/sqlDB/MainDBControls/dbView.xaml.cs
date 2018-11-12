@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sqlDB.EditControls;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -31,15 +32,20 @@ namespace sqlDB.MainDBControls
 
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            DBConnect.UpdateDataGrid(dataGrid);
+            //DBConnect.UpdateDataGrid(dataGrid);
         }
 
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            int parse = dataGrid.SelectedIndex;
+            /*int parse = dataGrid.SelectedIndex;
             DataRowView rowView = dataGrid.SelectedValue as DataRowView;
             
-            MessageBox.Show(parse.ToString() + rowView[0].ToString());
+            MessageBox.Show(parse.ToString() + rowView[0].ToString());*/
+
+            pageContent.Children.Clear();
+            UserControl usc = null;
+            usc = new create();
+            pageContent.Children.Add(usc);
         }
     }
 }

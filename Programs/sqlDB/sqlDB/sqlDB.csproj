@@ -81,6 +81,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="EditControls\create.xaml.cs">
+      <DependentUpon>create.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditControls\delete.xaml.cs">
+      <DependentUpon>delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditControls\update.xaml.cs">
+      <DependentUpon>update.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editPages.xaml.cs">
+      <DependentUpon>editPages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LogRegControls\login_template.xaml.cs">
       <DependentUpon>login_template.xaml</DependentUpon>
     </Compile>
@@ -92,6 +104,22 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="EditControls\create.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditControls\delete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditControls\update.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editPages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="login_page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
