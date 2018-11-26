@@ -1,0 +1,33 @@
+﻿<Window x:Class="Chat.Client"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat"
+        mc:Ignorable="d"
+        Title="Client" Height="612" Width="809"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <TextBox x:Name="userName" Margin="10,10,10,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Логин" VerticalAlignment="Top" Height="25" FontSize="11"/>
+            <Button x:Name="connBtn" Content="Подключиться" Margin="10,40,10,0" Click="enterChat_Click" Height="36" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid Grid.Column="1" Name="startGrid" Visibility="Visible">
+            <ScrollViewer Name="scroll" Margin="10,10,10,48" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <TextBlock x:Name="chatBox" Margin="5 5 5 5" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="621" KeyDown="chatBox_KeyDown"/>
+            </ScrollViewer>
+
+            <TextBox x:Name="chat_msg" Margin="10,0,125,10" IsEnabled="False" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите сообщение" KeyDown="chat_msg_KeyDown" Height="33" VerticalAlignment="Bottom"/>
+            <Button x:Name="chat_send" Content="Отправить" IsEnabled="False" Margin="0,0,10,10" Click="chat_send_Click" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="105"/>
+        </Grid>
+
+
+    </Grid>
+</Window>
