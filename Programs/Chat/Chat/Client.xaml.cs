@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 namespace Chat
 {
     /// <summary>
@@ -36,6 +37,12 @@ namespace Chat
             clientThread = new Thread(Listener);
             clientThread.IsBackground = true;
             clientThread.Start();
+
+            string Name = DBConnect.user;
+            userChip.Content = Name;
+            userChip.Icon = Name[0];
+            // Отправляем серверу комманду с именем клиента
+            Send("#setname&" + Name);
         }
 
         /// <summary>
@@ -146,7 +153,7 @@ namespace Chat
             }));
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Функция выполняющаяся при нажатии на кнопку "Подключится"
         /// </summary>
         /// <param name="sender"></param>
@@ -163,7 +170,7 @@ namespace Chat
             chat_send.IsEnabled = true;
             userName.IsEnabled = false;
             connBtn.IsEnabled = false;
-        }
+        }*/
 
         /// <summary>
         /// Функция отправки сообщений при нажатии на кнопку "Отправить"
@@ -201,6 +208,11 @@ namespace Chat
         {
             if (e.Key == Key.Enter)
                 SendMessage();
+        }
+
+        private void exitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

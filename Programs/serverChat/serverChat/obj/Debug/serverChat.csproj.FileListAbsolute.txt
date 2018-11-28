@@ -11,3 +11,10 @@ C:\Users\User\Desktop\serverChat\serverChat\obj\Debug\serverChat.csprojAssemblyR
 C:\Users\User\Desktop\serverChat\serverChat\obj\Debug\serverChat.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\serverChat\serverChat\obj\Debug\serverChat.exe
 C:\Users\User\Desktop\serverChat\serverChat\obj\Debug\serverChat.pdb
+A:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.csprojAssemblyReference.cache
+A:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.csproj.CoreCompileInputs.cache
+A:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.exe
+A:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.pdb
+A:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\bin\Debug\serverChat.exe.config
+A:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\bin\Debug\serverChat.exe
+A:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\bin\Debug\serverChat.pdb

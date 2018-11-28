@@ -5,27 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chat"
         mc:Ignorable="d"
-        Title="Client" Height="612" Width="809"
+        Title="Client" Height="612" Width="700"
         WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="535*"/>
+        </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="79*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid>
-            <TextBox x:Name="userName" Margin="10,10,10,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Логин" VerticalAlignment="Top" Height="25" FontSize="11"/>
-            <Button x:Name="connBtn" Content="Подключиться" Margin="10,40,10,0" Click="enterChat_Click" Height="36" VerticalAlignment="Top"/>
-        </Grid>
-        <Grid Grid.Column="1" Name="startGrid" Visibility="Visible">
-            <ScrollViewer Name="scroll" Margin="10,10,10,48" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-                <TextBlock x:Name="chatBox" Margin="5 5 5 5" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="621" KeyDown="chatBox_KeyDown"/>
+        <Grid Name="startGrid" Visibility="Visible" Grid.Row="1">
+            <ScrollViewer Name="scroll" Margin="10,10,10,48" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Background="AliceBlue" BorderBrush="Black">
+                <TextBlock x:Name="chatBox" Margin="5 5 5 5" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="750" KeyDown="chatBox_KeyDown"/>
             </ScrollViewer>
 
-            <TextBox x:Name="chat_msg" Margin="10,0,125,10" IsEnabled="False" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите сообщение" KeyDown="chat_msg_KeyDown" Height="33" VerticalAlignment="Bottom"/>
-            <Button x:Name="chat_send" Content="Отправить" IsEnabled="False" Margin="0,0,10,10" Click="chat_send_Click" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="105"/>
+            <TextBox x:Name="chat_msg" Margin="10,0,125,10" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите сообщение" KeyDown="chat_msg_KeyDown" Height="33" VerticalAlignment="Bottom"/>
+            <Button x:Name="chat_send" Content="Отправить" Margin="0,0,10,10" Click="chat_send_Click" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="105"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="161*"/>
+                <ColumnDefinition Width="396*"/>
+                <ColumnDefinition Width="135*"/>
+            </Grid.ColumnDefinitions>
+
+            <materialDesign:Chip
+                Name="userChip"
+                Content="Test"
+                Icon="T" Margin="10 0 0 0" MaxWidth="161" VerticalAlignment="Bottom" ToolTip="Пользователь"/>
+            <Button x:Name="exitBtn" Content="Выход" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Bottom" Width="75" Click="exitBtn_Click"/>
         </Grid>
 
 
