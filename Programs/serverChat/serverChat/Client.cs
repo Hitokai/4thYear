@@ -46,7 +46,7 @@ namespace serverChat
                 {
                     // Получение сообщения, его декодировка и
                     // отправка комманды
-                    byte[] buffer = new byte[1024];
+                    byte[] buffer = new byte[8196];
                     int bytesRec = handler.Receive(buffer);
                     string data = Encoding.UTF8.GetString(buffer, 0, bytesRec);
                     handleCommand(data);
