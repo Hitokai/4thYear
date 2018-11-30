@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -15,6 +16,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Brushes = System.Windows.Media.Brushes;
+using Image = System.Drawing.Image;
 
 namespace Chat
 {
@@ -28,6 +31,8 @@ namespace Chat
         private const string SERVERHOST = "127.0.0.1";
         private const int SERVERPORT = 100;
 
+        string Name = DBConnect.user;
+
         public Client()
         {
             InitializeComponent();
@@ -38,9 +43,13 @@ namespace Chat
             clientThread.IsBackground = true;
             clientThread.Start();
 
-            string Name = DBConnect.user;
+            
             userChip.Content = Name;
+
+            //System.Windows.Controls.Image img = new System.Windows.Controls.Image();
+            //img.Source = new BitmapImage(new Uri(@"A:\Games\osu!\avatar\103808.jpg"));
             userChip.Icon = Name[0];
+
             // Отправляем серверу комманду с именем клиента
             Send("#setname&" + Name);
         }
@@ -85,7 +94,7 @@ namespace Chat
                 serverSocket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 serverSocket.Connect(ipEndPoint);
             }
-            catch { chatBox.Text = ("Сервер недоступен!"); }
+            catch { MessageBox.Show("Сервер недоступен!"); }
         }
 
         /// <summary>
@@ -95,7 +104,7 @@ namespace Chat
         {
             // Получение доступа к элементу в другом потоке
             Dispatcher.BeginInvoke(new ThreadStart(delegate {
-                chatBox.Text = string.Empty;
+                msgBoard.Children.Clear();
             }));
         }
 
@@ -132,7 +141,7 @@ namespace Chat
                 byte[] buffer = Encoding.UTF8.GetBytes(data);
                 int bytesSent = serverSocket.Send(buffer);
             }
-            catch { chatBox.Text = ("Связь с сервером прервалась..."); }
+            catch { MessageBox.Show("Связь с сервером прервалась..."); }
         }
 
         /// <summary>
@@ -143,14 +152,68 @@ namespace Chat
         {
             // Получение доступа к элементу в другом потоке
             Dispatcher.BeginInvoke(new ThreadStart(delegate {
-                if (chatBox.Text.Length == 0)
+                /*if (chatBox.Text.Length == 0)
                     chatBox.Text += msg;
                 else
                 {
                     chatBox.Text += (Environment.NewLine + msg);
                     scroll.ScrollToEnd();
-                }   
+                }*/
+
+                createMesBoard(msg);
+                scroll.ScrollToEnd();
+
             }));
+        }
+
+        private void createMesBoard(string msg)
+        {
+            string msgName = msg.Substring(0, msg.IndexOf(' '));//Первая часть соообщения - имя
+            msgName = msgName.Trim();//Удаление мусора
+
+            StackPanel messageSP = new StackPanel();//Стак панель, хранящая в себе имя и сообщение
+            messageSP.Margin = new Thickness(0, 0, 0, 20);
+            messageSP.VerticalAlignment = VerticalAlignment.Bottom;//Отображение сообщений внизу
+            messageSP.Height = double.NaN;//растянуть по всей высоте Height = "auto"
+
+            //Блок имени пользователя
+            TextBlock UserNameTB = new TextBlock();
+            UserNameTB.FontWeight = FontWeights.Bold;
+            UserNameTB.FontSize = 20;
+            UserNameTB.Margin = new Thickness(5, 0, 0, 0);
+            UserNameTB.Text = msgName;
+            UserNameTB.Foreground = Brushes.DeepSkyBlue;
+
+            //Блок сообщения
+            TextBlock messageTB = new TextBlock();
+            messageTB.Text = msg.Substring(msg.IndexOf(' '));
+            messageTB.TextWrapping = TextWrapping.Wrap;
+            messageTB.Margin = new Thickness(5, 0, 0, 0);
+            messageTB.FontSize = 18;
+            messageTB.Foreground = Brushes.White;
+
+            //MessageBox.Show(lnameBox.Text);
+            //MessageBox.Show(name);
+            if (msgName == string.Format("[{0}]:", Name))
+            {
+                UserNameTB.HorizontalAlignment = HorizontalAlignment.Right;
+                messageTB.HorizontalAlignment = HorizontalAlignment.Right;
+                messageSP.HorizontalAlignment = HorizontalAlignment.Right;
+                messageSP.Margin = new Thickness(300, 0, 5, 0);
+                UserNameTB.Margin = new Thickness(5, 0, 5, 0);
+            }
+            else
+            {
+                UserNameTB.HorizontalAlignment = HorizontalAlignment.Left;
+                messageTB.HorizontalAlignment = HorizontalAlignment.Left;
+                messageSP.HorizontalAlignment = HorizontalAlignment.Left;
+                messageSP.Margin = new Thickness(5, 0, 300, 0);
+                UserNameTB.Margin = new Thickness(5, 0, 5, 0);
+            }
+            //Добавление блока сообщения и имени пользователя в стак панель, а ее в основную доску сообщений
+            messageSP.Children.Add(UserNameTB);
+            messageSP.Children.Add(messageTB);
+            msgBoard.Children.Add(messageSP);
         }
 
         /*/// <summary>

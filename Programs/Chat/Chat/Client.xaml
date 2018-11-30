@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Client" Height="612" Width="700"
         WindowStartupLocation="CenterScreen"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Background="#252526">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
@@ -15,11 +16,11 @@
         </Grid.RowDefinitions>
 
         <Grid Name="startGrid" Visibility="Visible" Grid.Row="1">
-            <ScrollViewer Name="scroll" Margin="10,10,10,48" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Background="AliceBlue" BorderBrush="Black">
-                <TextBlock x:Name="chatBox" Margin="5 5 5 5" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="750" KeyDown="chatBox_KeyDown"/>
+            <ScrollViewer Name="scroll" Margin="10,10,10,48" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Background="#4F4F50" BorderBrush="Black">
+                <StackPanel Name="msgBoard" HorizontalAlignment="Left" Background="#4F4F50" VerticalAlignment="Top" Width="642"/>
             </ScrollViewer>
 
-            <TextBox x:Name="chat_msg" Margin="10,0,125,10" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите сообщение" KeyDown="chat_msg_KeyDown" Height="33" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="chat_msg" Margin="10,0,125,10" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите сообщение" KeyDown="chat_msg_KeyDown" Height="33" VerticalAlignment="Bottom" Foreground="White"/>
             <Button x:Name="chat_send" Content="Отправить" Margin="0,0,10,10" Click="chat_send_Click" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="105"/>
         </Grid>
         <Grid>
@@ -32,7 +33,10 @@
             <materialDesign:Chip
                 Name="userChip"
                 Content="Test"
-                Icon="T" Margin="10 0 0 0" MaxWidth="161" VerticalAlignment="Bottom" ToolTip="Пользователь"/>
+                Icon="T"
+                Foreground="White"
+                Margin="10 0 0 0" MaxWidth="161" VerticalAlignment="Bottom" ToolTip="Пользователь">
+            </materialDesign:Chip>
             <Button x:Name="exitBtn" Content="Выход" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Bottom" Width="75" Click="exitBtn_Click"/>
         </Grid>
 
