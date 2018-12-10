@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Chat.Message"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Chat"
+             mc:Ignorable="d" d:DesignWidth="615" Foreground="Black" Height="79.25">
+    <StackPanel Margin="5">
+        <Grid x:Name="MainGrid" Height="69">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="329*"/>
+            </Grid.ColumnDefinitions>
+            <Ellipse x:Name="Photo" Fill="AliceBlue" Margin="0" Stroke="Black" Height="69" Width="69" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <StackPanel x:Name="StackMsg" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Border CornerRadius="12" Padding="2" BorderThickness="2">
+                    <TextBox x:Name="MsgBox" IsReadOnly="True" TextWrapping="Wrap" Background="AliceBlue" Padding="5" Margin="0" HorizontalAlignment="Stretch" Width="auto" FontSize="18"/>
+                </Border>
+            </StackPanel>
+
+        </Grid>
+    </StackPanel>
+
+</UserControl>

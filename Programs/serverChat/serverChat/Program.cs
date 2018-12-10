@@ -10,25 +10,26 @@ namespace serverChat
 {
     class Program
     {
-        private const string SERVERHOST = "localhost";
-        private const int SERVERPORT = 100;
+        private const string ip= "127.0.0.1";
+        private const int port = 100;
         private static Thread serverThread;
 
         static void Main(string[] args)
         {
             // Создаём и запускаем фоновый поток
-            serverThread = new Thread(StartServer);
+            serverThread = new Thread(startServer);
             serverThread.IsBackground = true;
             serverThread.Start();
             while (true)
-                HandlerCommands(Console.ReadLine());
+                handlerCommands(Console.ReadLine());
         }
+
 
         /// <summary>
         /// Функция получения списка пользователей
         /// </summary>
         /// <param name="cmd"></param>
-        private static void HandlerCommands(string cmd)
+        private static void handlerCommands(string cmd)
         {
             cmd = cmd.ToLower();
             if (cmd.Contains("/getusers"))
@@ -44,26 +45,31 @@ namespace serverChat
         /// <summary>
         /// Функия запуска сервера
         /// </summary>
-        private static void StartServer()
+        private static void startServer()
         {
-            IPHostEntry ipHost = Dns.GetHostEntry(SERVERHOST);
-
+            IPHostEntry ipHost = Dns.GetHostEntry(ip);
             IPAddress ipAddress = ipHost.AddressList[0];
-            IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, SERVERPORT);
+            IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, port);
             Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
-            socket.Bind(new IPEndPoint(IPAddress.Any, SERVERPORT));
+            try
+            {
+                socket.Bind(new IPEndPoint(IPAddress.IPv6Any, port));
+            }
+            catch
+            {
+                socket.Bind(new IPEndPoint(IPAddress.Any, port));
+            }
+
 
             IPEndPoint sender = new IPEndPoint(IPAddress.Any, 0);
             EndPoint remote = (EndPoint)(sender);
-
-            socket.Listen(1000);
+            socket.Listen(0);
             Console.WriteLine("Сервер запущен на IP: {0}.", ipEndPoint);
-            while (true)
+            while(true)
             {
                 try
                 {
-                    // Подключение пользователя
                     Socket user = socket.Accept();
                     Server.NewClient(user);
                 }

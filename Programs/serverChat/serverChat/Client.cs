@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Threading;
+using System.Text.RegularExpressions;
+
 namespace serverChat
 {
     public class Client
@@ -46,7 +48,7 @@ namespace serverChat
                 {
                     // Получение сообщения, его декодировка и
                     // отправка комманды
-                    byte[] buffer = new byte[8196];
+                    byte[] buffer = new byte[1048576];
                     int bytesRec = handler.Receive(buffer);
                     string data = Encoding.UTF8.GetString(buffer, 0, bytesRec);
                     handleCommand(data);
@@ -82,15 +84,25 @@ namespace serverChat
         {
             // Если в комманде содержится строка "#setname"
             // значит клиент ввёл своё имя и отправил его на сервер.
-            if (data.Contains("#setname"))
+            string command = "#setname";
+            int count = 0;
+            if (data.Contains(command))
             {
-                if (data.Split('&')[0] == "#setname")
+                for(int i = 0; i < 8; i++)
                 {
-                    userName = data.Split('&')[1];
-                    // Обновляем чат (добавляем все сообщения хранящиеся на сервере)
-                    UpdateChat();
-                    return;
+                    if(data[i] == command[i])
+                    {
+                        count++;
+                    }
+                    if (count == 8)
+                    {
+                        userName = data.Split('&')[1];
+                        // Обновляем чат (добавляем все сообщения хранящиеся на сервере)
+                        UpdateChat();
+                    }
                 }
+                count = 0;
+                return;
             }
             // Если в комманде содержится строка "#newmsg"
             // значит это сообщение от пользователя.

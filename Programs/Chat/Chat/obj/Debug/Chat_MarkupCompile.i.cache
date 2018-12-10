@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\
 Chat
 none
 false
 DEBUG;TRACE
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\App.xaml
-2-1806147189
+C:\Users\temik\Desktop\Chat\Chat\App.xaml
+4-404440083
 
-111946927096
-25-1002931809
-Client.xaml;logRegWindow.xaml;
+14-15303247
+25271279169
+Client.xaml;Login.xaml;Message.xaml;Registr.xaml;
 
-True
+False
 

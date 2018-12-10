@@ -1,13 +1,17 @@
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\Chat.exe.config
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\Chat.exe
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\Chat.pdb
+C:\Users\User\Desktop\Chat\Chat\bin\Debug\MaterialDesignColors.dll
+C:\Users\User\Desktop\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Chat\Chat\obj\Debug\Login.g.cs
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\App.g.cs
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat_MarkupCompile.cache
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat_MarkupCompile.lref
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\App.baml
+C:\Users\User\Desktop\Chat\Chat\obj\Debug\Login.baml
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.g.resources
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.Properties.Resources.resources
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.cache
@@ -15,34 +19,125 @@ C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.csproj.CopyComplete
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.exe
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Chat.pdb
+C:\Users\User\Desktop\Chat\Chat\obj\Debug\Registr.g.cs
+C:\Users\User\Desktop\Chat\Chat\obj\Debug\Registr.baml
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\Google.Protobuf.dll
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\MySql.Data.dll
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\Google.Protobuf.xml
 C:\Users\User\Desktop\Chat\Chat\bin\Debug\MySql.Data.xml
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Client.g.cs
 C:\Users\User\Desktop\Chat\Chat\obj\Debug\Client.baml
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.exe.config
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.exe
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.pdb
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Google.Protobuf.dll
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MySql.Data.dll
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Google.Protobuf.xml
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MySql.Data.xml
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csprojAssemblyReference.cache
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Client.g.cs
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\App.g.cs
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat_MarkupCompile.cache
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat_MarkupCompile.lref
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\App.baml
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Client.baml
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.g.resources
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.Properties.Resources.resources
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.cache
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.CoreCompileInputs.cache
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.CopyComplete
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.exe
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.pdb
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\logRegWindow.g.cs
-A:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\logRegWindow.baml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\Chat.exe.config
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\Chat.exe
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\Chat.pdb
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\Google.Protobuf.dll
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\MySql.Data.dll
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\Google.Protobuf.xml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\MySql.Data.xml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Client.g.cs
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Login.g.cs
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Registr.g.cs
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\App.g.cs
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat_MarkupCompile.cache
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat_MarkupCompile.lref
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\App.baml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Client.baml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Login.baml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Registr.baml
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.g.resources
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.Properties.Resources.resources
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.csproj.CopyComplete
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.exe
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\obj\Debug\Chat.pdb
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\MaterialDesignColors.dll
+C:\Users\User\source\repos\Projects\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\Chat.exe.config
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\Chat.exe
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\Chat.pdb
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\Google.Protobuf.dll
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\MySql.Data.dll
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\Google.Protobuf.xml
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\User\Desktop\ChatProject\Chat\Chat\bin\Debug\MySql.Data.xml
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.csprojAssemblyReference.cache
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Client.g.cs
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Login.g.cs
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Registr.g.cs
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\App.g.cs
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat_MarkupCompile.cache
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat_MarkupCompile.lref
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\App.baml
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Client.baml
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Login.baml
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Registr.baml
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.g.resources
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.Properties.Resources.resources
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.cache
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.csproj.CopyComplete
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.exe
+C:\Users\User\Desktop\ChatProject\Chat\Chat\obj\Debug\Chat.pdb
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\Chat.exe.config
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\Chat.exe
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\Chat.pdb
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\Google.Protobuf.dll
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\MaterialDesignColors.dll
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\MySql.Data.dll
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\Google.Protobuf.xml
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\bin\Debug\MySql.Data.xml
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat.csprojResolveAssemblyReference.cache
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Client.g.cs
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Login.g.cs
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Registr.g.cs
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\App.g.cs
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat_MarkupCompile.cache
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat_MarkupCompile.lref
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\App.baml
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Client.baml
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Login.baml
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Registr.baml
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat.g.resources
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat.Properties.Resources.resources
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.Cache
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat.exe
+C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\Chat\Chat\obj\Debug\Chat.pdb
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\Chat.exe.config
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\Chat.exe
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\Chat.pdb
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\Google.Protobuf.dll
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\MaterialDesignColors.dll
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\MySql.Data.dll
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\Google.Protobuf.xml
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\temik\Desktop\Chat\Chat\bin\Debug\MySql.Data.xml
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.csprojAssemblyReference.cache
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Client.g.cs
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Login.g.cs
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Registr.g.cs
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\App.g.cs
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat_MarkupCompile.cache
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat_MarkupCompile.lref
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\App.baml
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Client.baml
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Login.baml
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Registr.baml
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.g.resources
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.Properties.Resources.resources
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.cache
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.csproj.CoreCompileInputs.cache
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.csproj.CopyComplete
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.exe
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.pdb
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Message.g.cs
+C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Message.baml
