@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:sqlDB"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="450" Width="600">
+        Title="Авторизация" Height="450" Width="600">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="350" Width="320">
             <Grid Name="pageContent" Height="350" Width="320">

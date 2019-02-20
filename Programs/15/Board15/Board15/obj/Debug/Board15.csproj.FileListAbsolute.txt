@@ -4,3 +4,9 @@ C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.csprojAssemblyRefer
 C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.dll
 C:\Users\User\source\repos\Board15\Board15\obj\Debug\Board15.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\Board15\bin\Debug\Board15.dll
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\Board15\bin\Debug\Board15.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\Board15\obj\Debug\Board15.csprojAssemblyReference.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\Board15\obj\Debug\Board15.csproj.CoreCompileInputs.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\Board15\obj\Debug\Board15.dll
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\Board15\obj\Debug\Board15.pdb

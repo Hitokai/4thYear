@@ -20,6 +20,14 @@ namespace sqlDB
 
         public static string tableName = "home";
 
+        /// <summary>
+        /// Функция регистрации пользователя
+        /// </summary>
+        /// <param name="newLogin">логин</param>
+        /// <param name="newPassword">пароль</param>
+        /// <param name="newEmail">почта</param>
+        /// <param name="newFname">имя</param>
+        /// <param name="newLname">фамилия</param>
         public static void RegFunc(string newLogin, string newPassword, string newEmail, string newFname, string newLname)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -35,6 +43,12 @@ namespace sqlDB
             conn.Close();
         }
 
+        /// <summary>
+        /// Функциия авторизации
+        /// </summary>
+        /// <param name="newLogin">логин</param>
+        /// <param name="newPassword">пароль</param>
+        /// <returns></returns>
         public static bool LoginFunc(string newLogin, string newPassword)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -56,6 +70,11 @@ namespace sqlDB
             return res;
         }
 
+        /// <summary>
+        /// Загрузка данных в таблицу
+        /// </summary>
+        /// <param name="table">таблица в БД</param>
+        /// <param name="dataGrid">таблица в приложении</param>
         public static void LoadToDataGrid(string table, DataGrid dataGrid)
         {
             string sql = "";
@@ -105,6 +124,10 @@ namespace sqlDB
             conn.Close();
         }
 
+        /// <summary>
+        /// Обновление данных в БД
+        /// </summary>
+        /// <param name="dataGrid">таблица в приложении</param>
         public static void UpdateDataGrid(DataGrid dataGrid)
         {
             conn.Open();

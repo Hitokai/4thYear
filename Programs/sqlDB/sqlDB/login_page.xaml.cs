@@ -21,6 +21,9 @@ namespace sqlDB
     /// </summary>
     public partial class login_page : Window
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public login_page()
         {
             InitializeComponent();

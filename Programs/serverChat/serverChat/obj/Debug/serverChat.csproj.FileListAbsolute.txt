@@ -31,3 +31,10 @@ C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.csprojAssembly
 C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.csproj.CoreCompileInputs.cache
 C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.exe
 C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\bin\Debug\serverChat.exe.config
+E:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\bin\Debug\serverChat.exe
+E:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\bin\Debug\serverChat.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.csprojAssemblyReference.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.csproj.CoreCompileInputs.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.exe
+E:\MyGoogleDrive\4 курс\Aref\Programs\serverChat\serverChat\obj\Debug\serverChat.pdb

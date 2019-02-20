@@ -20,12 +20,20 @@ namespace sqlDB
     /// </summary>
     public partial class mainDbPage : Window
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public mainDbPage()
         {
             InitializeComponent();
         }
 
-        private void ViewBtn_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Смена вкладок при нажатии на кнопки меню
+        /// </summary>
+        /// <param name="sender">Объект</param>
+        /// <param name="e">Событие</param>
+        private void ClickOnViewBtn(object sender, RoutedEventArgs e)
         {
             pageContent.Children.Clear();
             UserControl usc = null;

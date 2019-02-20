@@ -156,9 +156,7 @@ E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.exe
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.pdb
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Google.Protobuf.dll
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignColors.dll
-E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.dll
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MySql.Data.dll
-E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Google.Protobuf.xml
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MySql.Data.xml
@@ -172,3 +170,5 @@ E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.Properties.Re
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.cache
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.CoreCompileInputs.cache
 E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.CopyComplete
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\CommonServiceLocator.dll
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Google.Protobuf.xml

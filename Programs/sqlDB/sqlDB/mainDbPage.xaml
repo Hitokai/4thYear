@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:sqlDB"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="mainDbPage" Height="720" Width="1280">
+        Title="DB" Height="720" Width="1280">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="320*"/>
@@ -42,10 +42,10 @@
                     <RowDefinition Height="250*"/>
                 </Grid.RowDefinitions>
                 <Button Content="Главная" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25"/>
-                <Button Name="driversViewBtn" Content="Водители" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="1" Click="ViewBtn_Click"/>
-                <Button Name="carsViewBtn" Content="Автомобили" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="2" Click="ViewBtn_Click"/>
-                <Button Name="trailersViewBtn" Content="Прицепы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="3" Click="ViewBtn_Click"/>
-                <Button Name="cargoViewBtn" Content="Груз" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="4" Click="ViewBtn_Click"/>
+                <Button Name="driversViewBtn" Content="Водители" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="1" Click="ClickOnViewBtn"/>
+                <Button Name="carsViewBtn" Content="Автомобили" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="2" Click="ClickOnViewBtn"/>
+                <Button Name="trailersViewBtn" Content="Прицепы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="3" Click="ClickOnViewBtn"/>
+                <Button Name="cargoViewBtn" Content="Груз" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="53" FontSize="25" Grid.Row="4" Click="ClickOnViewBtn"/>
             </Grid>
         </Grid>
         <Grid Name="pageContent" Grid.Column="1" HorizontalAlignment="Center" Height="689" VerticalAlignment="Center" Width="951"/>
