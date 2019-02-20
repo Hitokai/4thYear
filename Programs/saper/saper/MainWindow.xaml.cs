@@ -33,6 +33,9 @@ namespace saper
 
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -40,31 +43,38 @@ namespace saper
             timer.Interval = new TimeSpan(0, 0, 1);
         }
 
-        // Начало игры при нажати на кнопку Старт
-        private void startButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Начало игры при нажати на кнопку Старт
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void ClickOnStartBtn(object sender, RoutedEventArgs e)
         {
             if (minSizeRadio.IsChecked == true)
             {
                 CreateGrid(10);
-                minesCoords = MinesCoord(10);
+                MinesCoords = GenerateMinesCoord(10);
                 GenerateGrid(10);
             }
             else if (midSizeRadio.IsChecked == true)
             {
                 CreateGrid(14);
-                minesCoords = MinesCoord(14);
+                MinesCoords = GenerateMinesCoord(14);
                 GenerateGrid(14);
             }
             else if (maxSizeRadio.IsChecked == true)
             {
                 CreateGrid(18);
-                minesCoords = MinesCoord(18);
+                MinesCoords = GenerateMinesCoord(18);
                 GenerateGrid(18);
             }
-            bombsLabel.Content = "Бомбы: " + minesCoords.Length;
+            bombsLabel.Content = "Бомбы: " + MinesCoords.Length;
         }
 
-        // Генерация поля для игры в зависимости от выбранного размера
+        /// <summary>
+        /// Генерация поля для игры в зависимости от выбранного размера
+        /// </summary>
+        /// <param name="size">размер поля</param>
         private void CreateGrid(int size)
         {
             sec = 0;
@@ -100,8 +110,8 @@ namespace saper
                 for (int j = 0; j < size; j++)
                 {
                     Button button = new Button();
-                    button.Click += BombFindButton_Click;
-                    button.MouseRightButtonDown += FlagButton;
+                    button.Click += FindBombBtnClick;
+                    button.MouseRightButtonDown += AddFlagButton;
                     button.Name = "btn_" + (i + 1).ToString() + "_" + (j + 1).ToString();
                     button.Background = new SolidColorBrush(Colors.Gray);
                     button.FontSize = 13;
@@ -117,8 +127,12 @@ namespace saper
             }
         }
 
-        // Действия происходящие при нажатии на кнопку на поле игры
-        private void BombFindButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Действия происходящие при нажатии на кнопку на поле игры
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событиие</param>
+        private void FindBombBtnClick(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Name;
             string[] nums = data.Split('_');
@@ -134,18 +148,22 @@ namespace saper
                 }
             }
 
-            if (openButtonsCount + minesCoords.Length == gameGrid.RowDefinitions.Count * gameGrid.RowDefinitions.Count)
+            if (openButtonsCount + MinesCoords.Length == gameGrid.RowDefinitions.Count * gameGrid.RowDefinitions.Count)
             {
                 timer.Stop();
                 MessageBox.Show("Вы победили");
                 CreateGrid(gameGrid.RowDefinitions.Count);
-                minesCoords = MinesCoord(gameGrid.RowDefinitions.Count);
+                MinesCoords = GenerateMinesCoord(gameGrid.RowDefinitions.Count);
                 GenerateGrid(gameGrid.RowDefinitions.Count);
             }    
         }
 
-        // Добавление флагов при нажатии на правую кнопку мыши
-        private void FlagButton(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Добавление флагов при нажатии на правую кнопку мыши
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void AddFlagButton(object sender, MouseEventArgs e)
         {
             Button currBtn = (sender as Button);
             
@@ -176,7 +194,12 @@ namespace saper
             }
         }
 
-        // Функция показывающая кнопки при нажатии на них
+        /// <summary>
+        /// Функция показывающая кнопки при нажатии на них
+        /// </summary>
+        /// <param name="row">строки</param>
+        /// <param name="col">столбцы</param>
+        /// <param name="size">размер</param>
         private void ShowButtons(int row, int col, int size)
         {
             
@@ -221,25 +244,28 @@ namespace saper
                 else
                     buttonMatrix[row - 1, col - 1].Foreground = new SolidColorBrush(Colors.Red);
 
-                for (int i = 0; i < minesCoords.Length; i++)
+                for (int i = 0; i < MinesCoords.Length; i++)
                 {
-                    if (minesCoords[i][0] == Convert.ToInt32(row) && minesCoords[i][1] == Convert.ToInt32(col))
+                    if (MinesCoords[i][0] == Convert.ToInt32(row) && MinesCoords[i][1] == Convert.ToInt32(col))
                     {
                         ShowBombs(size);
                         timer.Stop();
                         MessageBox.Show("Игра окончена. Вы проиграли.");
                         CreateGrid(size);
-                        minesCoords = MinesCoord(size);
+                        MinesCoords = GenerateMinesCoord(size);
                         GenerateGrid(size);
                         break;
                     }
                 }
             }
-            bombsLabel.Content = "Бомбы: " + minesCoords.Length;
+            bombsLabel.Content = "Бомбы: " + MinesCoords.Length;
 
         }
 
-        // Функция для показа всех бомб находищихся на поле
+        /// <summary>
+        /// Функция для показа всех бомб находищихся на поле
+        /// </summary>
+        /// <param name="size">размер</param>
         private void ShowBombs(int size)
         {
             for (int i = 1; i <= size; i++)
@@ -259,7 +285,11 @@ namespace saper
             }
         }
 
-        // Таймер
+        /// <summary>
+        /// Таймер
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
         private void TickTimer(object sender, EventArgs e)
         {
             sec++;

@@ -26,6 +26,9 @@ namespace sudoku
         Button[,] listButtons = new Button[9, 9]; // массив кнопок
         int[,] newGrid = new int[9, 9]; // массив игрового поля
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -50,7 +53,11 @@ namespace sudoku
             }
         }
 
-        // Обработчик нажитий левой кнопкой мыши на ячейку
+        /// <summary>
+        /// Обработчик нажитий левой кнопкой мыши на ячейку
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
         private void ClickOnLeftButton(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Content;
@@ -66,7 +73,11 @@ namespace sudoku
             FinishGame();
         }
 
-        // Обработчик нажитий правой кнопкой мыши на ячейку
+        /// <summary>
+        /// Обработчик нажитий правой кнопкой мыши на ячейку
+        /// </summary>
+        /// <param name="sender">Объект</param>
+        /// <param name="e">событие</param>
         private void ClickOnRightButton(object sender, MouseEventArgs e)
         {
             Button currBtn = (sender as Button);
@@ -82,7 +93,11 @@ namespace sudoku
             FinishGame();
         }
 
-        // Создание цифр и помещение их в кнопки
+        /// <summary>
+        /// Создание цифр и помещение их в кнопки
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
         private void CreateContent(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "";
@@ -109,7 +124,9 @@ namespace sudoku
             btnStart.IsEnabled = false;
         }
 
-        // Проверка поля. Если массивы равны - закончить игру.
+        /// <summary>
+        /// Проверка поля. Если массивы равны - закончить игру.
+        /// </summary>
         private void FinishGame()
         {
             bool res = IsEqual();
@@ -131,7 +148,10 @@ namespace sudoku
             }
         }
 
-        // Сравнивание двух массивов, если сумма равна 81, то это победа
+        /// <summary>
+        /// Сравнивание двух массивов, если сумма равна 81, то это победа
+        /// </summary>
+        /// <returns>подтверждение конца игры</returns>
         private bool IsEqual()
         {
             int count = 0;

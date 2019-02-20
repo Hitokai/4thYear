@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:saper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
+        Title="Сапёр" Height="450" Width="600">
     <Grid>
         <Grid x:Name="gameGrid" Margin="10,10,182,10">
             <Grid.RowDefinitions>
@@ -34,10 +34,10 @@
             </Grid.ColumnDefinitions>
         </Grid>
         <Label x:Name="label1" Content="Сапёр" FontSize="36" FontFamily="Britannic Bold" Margin="0,15,28,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Right" Width="130"/>
-        <RadioButton x:Name="minSizeRadio" Content="Поле 10х10" Margin="0,71,58,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="73"/>
-        <RadioButton x:Name="midSizeRadio" Content="Поле 14х14" Margin="0,92,58,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="73"/>
-        <RadioButton x:Name="maxSizeRadio" Content="Поле 18х18" Margin="0,113,58,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="73"/>
-        <Button x:Name="startButton" Content="Начать игру" Margin="0,134,28,0" VerticalAlignment="Top" Height="31" Click="startButton_Click" HorizontalAlignment="Right" Width="130"/>
+        <RadioButton x:Name="minSizeRadio" Content="Поле 10х10" Margin="0,71,46,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85"/>
+        <RadioButton x:Name="midSizeRadio" Content="Поле 14х14" Margin="0,92,46,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85"/>
+        <RadioButton x:Name="maxSizeRadio" Content="Поле 18х18" Margin="0,113,46,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85"/>
+        <Button x:Name="startButton" Content="Начать игру" Margin="0,134,28,0" VerticalAlignment="Top" Height="31" Click="ClickOnStartBtn" HorizontalAlignment="Right" Width="130"/>
         <Label x:Name="timeLabel" Content="Время" Margin="0,0,10,9" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86"/>
         <Label x:Name="bombsLabel" Content="Бомбы" Margin="0,0,101,9" HorizontalAlignment="Right" Width="76" Height="26" VerticalAlignment="Bottom"/>
 

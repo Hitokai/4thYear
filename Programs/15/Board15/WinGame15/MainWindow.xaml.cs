@@ -24,6 +24,9 @@ namespace WinGame15
         const int size = 4;
         Game game;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -31,8 +34,12 @@ namespace WinGame15
             HideButtons();
         }
 
-        // Старт игры при нажатии на кнопку Старт
-        private void buttonStart_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Старт игры при нажатии на кнопку Старт
+        /// </summary>
+        /// <param name="sender">Объект</param>
+        /// <param name="e">Событие</param>
+        private void ClickOnStartBtn(object sender, RoutedEventArgs e)
         {
             Random rnd = new Random();
             int steps = rnd.Next(700, 1600);
@@ -41,7 +48,12 @@ namespace WinGame15
             ShowButtons();
         }
 
-        private void btnClick(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Функция срабатывающая при нажатии на кнопки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickOnBtn(object sender, RoutedEventArgs e)
         {
             // Если игра  уже решена, то ничего не делаем
             if (game.Solved())
@@ -59,7 +71,9 @@ namespace WinGame15
             }  
         }
 
-        // Заполняем кнопки нулями и делаем их невидимыми
+        /// <summary>
+        /// Заполняем кнопки нулями и делаем их невидимыми
+        /// </summary>
         void HideButtons()
         {
             for (int x = 0; x < size; x++)
@@ -67,7 +81,9 @@ namespace WinGame15
                     ShowDigit(0, x, y);
         }
 
-        // Показ кнопок
+        /// <summary>
+        /// Показ кнопок
+        /// </summary>
         void ShowButtons()
         {
             // Проходим по всему массиву и делаем кнопки видимыми
@@ -77,7 +93,12 @@ namespace WinGame15
             labelMoves.Content = "Кол-во ходов: " + game.moves;
         }
 
-        // Скрытие кнопок
+        /// <summary>
+        /// Скрытие кнопок
+        /// </summary>
+        /// <param name="digit">Цифра</param>
+        /// <param name="x">Координата X</param>
+        /// <param name="y">Координата Y</param>
         void ShowDigit(int digit, int x, int y)
         {
             // Находим кнопку по названию и вписываем в неё цифру

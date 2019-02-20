@@ -33,6 +33,9 @@ namespace planner
         PopupNotifier newNotifier = new PopupNotifier(); // Экземпляр объекта оповещений
         winForms.NotifyIcon notify = new winForms.NotifyIcon();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -56,27 +59,39 @@ namespace planner
 
             // Таймер проверяющий соответствие времени системы и событий в планировщике
             DispatcherTimer dispatcher = new DispatcherTimer();
-            dispatcher.Tick += new EventHandler(Notifications);
+            dispatcher.Tick += new EventHandler(ShowNotifications);
             dispatcher.Interval = new TimeSpan(0, 0, 1);
             dispatcher.Start();
         }
-        
-        // Метод нажатия на кнопку открытия бокового меню
-        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Метод нажатия на кнопку открытия бокового меню
+        /// </summary>
+        /// <param name="sender">Объект</param>
+        /// <param name="e">событие</param>
+        private void ClickOnMenuBtn(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Visible;
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
         }
 
-        // Метод нажатия на кнопку закрытия бокового меню
-        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Метод нажатия на кнопку закрытия бокового меню
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void ClickOnCloseBtn(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             ButtonOpenMenu.Visibility = Visibility.Visible;
         }
 
-        // Метод для изменения содержимого Grid при выборе пунктов меню
-        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        /// <summary>
+        /// Метод для изменения содержимого Grid при выборе пунктов меню
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событиеи</param>
+        private void ChangeListViewMenu(object sender, SelectionChangedEventArgs e)
         {
             UserControl usc = null;
             GridMain.Children.Clear();
@@ -100,14 +115,22 @@ namespace planner
             }
         }
 
-        // Закрытие окна
-        private void closeButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Закрытие окна
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void ClickClose(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        // Возможность перетаскивания окна по экрану
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        /// <summary>
+        /// Возможность перетаскивания окна по экрану
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void MoveWindow(object sender, MouseButtonEventArgs e)
         {
             try
             {
@@ -116,8 +139,12 @@ namespace planner
             catch { }
         }
 
-        // Сворачивание окна в трей
-        private void MinimizeWindow_OnClickButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Сворачивание окна в трей
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void MinimizeMenu(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
             notify.Visible = true;
@@ -127,8 +154,12 @@ namespace planner
             this.Hide();
         }
 
-        // Оповещение о событии
-        private void Notifications(object sender, EventArgs  e)
+        /// <summary>
+        /// Оповещение о событии
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void ShowNotifications(object sender, EventArgs  e)
         {
             string currTime = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
             if (dates.Contains(currTime))

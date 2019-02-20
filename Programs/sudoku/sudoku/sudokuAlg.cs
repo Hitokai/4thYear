@@ -11,7 +11,10 @@ namespace sudoku
     {
         public static int[,] grid = new int[9, 9];
 
-        // Заполнение массива цифрами по формуле
+        /// <summary>
+        /// Заполнение массива цифрами по формуле
+        /// </summary>
+        /// <param name="grid">массив клеток</param>
         public static void initGrid(int[,] grid)
         // Формула постоянно сдвигает цифры на следующей строке на насколько позиций
         {
@@ -24,7 +27,12 @@ namespace sudoku
             }
         }
 
-        // Изменение значений в двух клетках
+        /// <summary>
+        /// Изменение значений в двух клетках
+        /// </summary>
+        /// <param name="grid">массив клеток</param>
+        /// <param name="findValue1">1 значение</param>
+        /// <param name="findValue2">2 значение</param>
         static void changeTwoCell(int[,] grid, int findValue1, int findValue2)
         {
             int xParam1, yParam1, xParam2, yParam2;
@@ -58,7 +66,10 @@ namespace sudoku
             }
         }
 
-        // Перемешивание чисел в таблице
+        /// <summary>
+        /// Перемешивание чисел в таблице
+        /// </summary>
+        /// <param name="grid">массив таблицы</param>
         public static void updateGrid(int[,] grid)
         {
             Random shuffleLevel = new Random(); // Кол-во перемешиваний

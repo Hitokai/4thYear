@@ -16,3 +16,25 @@ C:\Users\User\source\repos\Board15\WinGame15\obj\Debug\WinGame15.pdb
 C:\Users\User\source\repos\Board15\WinGame15\bin\Debug\Board15.dll
 C:\Users\User\source\repos\Board15\WinGame15\bin\Debug\Board15.pdb
 C:\Users\User\source\repos\Board15\WinGame15\obj\Debug\WinGame15.csproj.CopyComplete
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\bin\Debug\WinGame15.exe.config
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\bin\Debug\WinGame15.exe.manifest
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\bin\Debug\WinGame15.application
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\bin\Debug\WinGame15.exe
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\bin\Debug\WinGame15.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\bin\Debug\Board15.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.csprojAssemblyReference.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\MainWindow.g.cs
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\App.g.cs
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15_MarkupCompile.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15_MarkupCompile.lref
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\MainWindow.baml
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.g.resources
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.Properties.Resources.resources
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.csproj.GenerateResource.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.csproj.CoreCompileInputs.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.TrustInfo.xml
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.exe.manifest
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.application
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.csproj.CopyComplete
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.exe
+E:\MyGoogleDrive\4 курс\Aref\Programs\15\Board15\WinGame15\obj\Debug\WinGame15.pdb

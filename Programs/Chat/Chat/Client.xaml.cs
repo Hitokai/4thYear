@@ -611,54 +611,5 @@ namespace Chat
             }
             dataBase.connect.Close();
         }
-
-        /// <summary>
-        /// Функция зацикливания гифки
-        /// </summary>
-        /// <param name="sender">Объект</param>
-        /// <param name="e">Событие</param>
-        private void media_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            MediaElement me = sender as MediaElement;
-            me.Position = TimeSpan.FromMilliseconds(1);
-        }
-
-        //Клики по рекламным банерам
-
-        private void binomoBut_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://binomo.com/ru");
-        }
-
-        private void vaBankBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("http://vabank.casino/");
-        }
-
-        private void gaminatorBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("http://online.geiminators.com/");
-        }
-
-        private void moneyBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://funpay.ru/chips/2/");
-        }
-
-        /// <summary>
-        /// Функция нажатия на кнопку выключения\включения рекламы
-        /// </summary>
-        /// <param name="sender">Объект</param>
-        /// <param name="e">Событие</param>
-        private void advertstringCheck_Click(object sender, RoutedEventArgs e)
-        {
-            if (advertstringCheck.IsChecked == true)
-            {
-                advertstring.Visibility = Visibility.Visible;
-            }
-            else
-                advertstring.Visibility = Visibility.Hidden;
-
-        }
     }
 }

@@ -21,10 +21,13 @@ namespace planner
     /// </summary>
     public partial class settings : UserControl
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public settings()
         {
             InitializeComponent();
-            App.LanguageChanged += LanguageChanged;
+            App.IsChangedLanguage += IsChangedLanguage;
 
             CultureInfo currLang = App.Language; // Текущий язык прграммы
 
@@ -41,8 +44,12 @@ namespace planner
             }
         }
 
-        // Метод проверяющий изменение языка
-        private void LanguageChanged(Object sender, EventArgs e)
+        /// <summary>
+        /// Метод проверяющий изменение языка
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void IsChangedLanguage(Object sender, EventArgs e)
         {
             CultureInfo currLang = App.Language;
 
@@ -54,7 +61,11 @@ namespace planner
             }
         }
 
-        // Метод выполняющий изменение языка
+        /// <summary>
+        /// Метод выполняющий изменение языка
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
         private void ChangeLanguageClick(Object sender, EventArgs e)
         {
             MenuItem mi = sender as MenuItem;

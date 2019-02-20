@@ -11,11 +11,15 @@ namespace saper
     class SaperAlg
     {
         public static Button[,] buttonMatrix;
-        public static int[][] minesCoords = new int[0][];
+        public static int[][] MinesCoords = new int[0][];
         public static int[,] gridNums;
 
-        // Функция генерации координат для мин
-        public static int[][] MinesCoord(int size)
+        /// <summary>
+        /// Функция генерации координат для мин
+        /// </summary>
+        /// <param name="size">размер поля</param>
+        /// <returns>список координат бомб</returns>
+        public static int[][] GenerateMinesCoord(int size)
         {
             gridNums = new int[size + 2, size + 2];
             for (int i = 0; i < size + 2; i++)
@@ -64,7 +68,13 @@ namespace saper
             return bombCoordList;
         }
 
-        // Проверка координат бомб
+        /// <summary>
+        /// Проверка координат бомб
+        /// </summary>
+        /// <param name="coords">координаты</param>
+        /// <param name="newCoords">новые координаты</param>
+        /// <param name="size">размер</param>
+        /// <returns>подтверджение нахождение бомбы в клетке</returns>
         public static bool CheckBombsCoord(int[][] coords,int[] newCoords, int size)
         {
             for (int i = 0; i < size; i++)
@@ -75,7 +85,10 @@ namespace saper
             return true;
         }
 
-        // Генерация цифр вокруг мин
+        /// <summary>
+        /// Генерация цифр вокруг мин
+        /// </summary>
+        /// <param name="size">размер поля</param>
         public static void GenerateGrid(int size)
         {
             int K;

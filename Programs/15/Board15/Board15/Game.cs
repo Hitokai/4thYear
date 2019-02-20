@@ -15,14 +15,20 @@ namespace Board15
 
         public int moves { get; private set; }
 
-        // Конструктор класса (инициализация игрового поля)
+        /// <summary>
+        /// Конструктор класса (инициализация игрового поля)
+        /// </summary>
+        /// <param name="size">Размер поля</param>
         public Game (int size)
         {
             this.size = size;
             map = new Map(size);
         }
 
-        // Старт игры
+        /// <summary>
+        /// Старт игры
+        /// </summary>
+        /// <param name="seed">ячейка</param>
         public void Start (int seed = 0)
         {
             int digit = 0;
@@ -35,7 +41,10 @@ namespace Board15
             moves = 0;
         }
 
-        // Перемешивание кнопок
+        /// <summary>
+        /// Перемешивание кнопок
+        /// </summary>
+        /// <param name="seed">ячейка</param>
         void Shuffle(int seed)
         {
             Random random = new Random(seed);
@@ -43,12 +52,22 @@ namespace Board15
                 Press(random.Next(size), random.Next(size));
         }
 
-        // Обработка нажатий на кнопку
+        /// <summary>
+        /// вызов функции нажатия на кнопку через структуру
+        /// </summary>
+        /// <param name="x">координата Х</param>
+        /// <param name="y">координата у</param>
+        /// <returns>шаги</returns>
         public int Press(int x, int y)
         {
             return Press(new Coord(x, y));
         }
 
+        /// <summary>
+        /// Обработка нажатий на кнопку
+        /// </summary>
+        /// <param name="xy"></param>
+        /// <returns>шаги</returns>
         int Press(Coord xy)
         {
             // Нажатия на кнопки
@@ -79,7 +98,11 @@ namespace Board15
             return steps;
         }
 
-        // Смещение кнопок
+        /// <summary>
+        /// Смещение кнопок
+        /// </summary>
+        /// <param name="sx">текущая ячейка х</param>
+        /// <param name="sy">текущая ячейка у</param>
         void Shift(int sx, int sy)
         {
             Coord next = space.Add(sx, sy);
@@ -88,12 +111,22 @@ namespace Board15
             space = next;
         }
 
-        // Получение информации о местонахождение кнопок
+        /// <summary>
+        /// вызов функции на получение координат кнопки
+        /// </summary>
+        /// <param name="x">координата х</param>
+        /// <param name="y">координата у</param>
+        /// <returns>координаты кнопки</returns>
         public int GetDigit(int x, int y)
         {
             return GetDigit(new Coord(x, y));
         }
 
+        /// <summary>
+        /// Получение информации о местонахождение кнопок
+        /// </summary>
+        /// <param name="xy">текущие координаты кнопки</param>
+        /// <returns>коордиинаты кнопки</returns>
         int GetDigit(Coord xy)
         {
             if (space.Equals(xy))
@@ -101,7 +134,10 @@ namespace Board15
             return map.Get(xy);
         }
 
-        // Окончание игры
+        /// <summary>
+        /// Окончание игры
+        /// </summary>
+        /// <returns>подтверждение окончания игры</returns>
         public bool Solved()
         {
             if (!space.Equals(new Coord(size)))

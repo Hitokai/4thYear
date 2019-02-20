@@ -116,9 +116,7 @@
                                 </ContentControl.Template>
                                 <ContentControl.Visibility>
                                     <TemplateBinding Property="Icon">
-                                        <TemplateBinding.Converter>
-                                            <Converters:NullableToVisibilityConverter NullValue="Collapsed" NotNullValue="Visible"/>
-                                        </TemplateBinding.Converter>
+                                       
                                     </TemplateBinding>
                                 </ContentControl.Visibility>
                             </ContentControl>
@@ -139,9 +137,7 @@
                                 </Button.Template>
                                 <Button.Visibility>
                                     <TemplateBinding Property="IsDeletable">
-                                        <TemplateBinding.Converter>
-                                            <BooleanToVisibilityConverter/>
-                                        </TemplateBinding.Converter>
+                                        
                                     </TemplateBinding>
                                 </Button.Visibility>
                             </Button>
@@ -186,9 +182,7 @@
                                 </ContentControl.Template>
                                 <ContentControl.Visibility>
                                     <TemplateBinding Property="Icon">
-                                        <TemplateBinding.Converter>
-                                            <Converters:NullableToVisibilityConverter NullValue="Collapsed" NotNullValue="Visible"/>
-                                        </TemplateBinding.Converter>
+                                        
                                     </TemplateBinding>
                                 </ContentControl.Visibility>
                             </ContentControl>
@@ -209,9 +203,7 @@
                                 </Button.Template>
                                 <Button.Visibility>
                                     <TemplateBinding Property="IsDeletable">
-                                        <TemplateBinding.Converter>
-                                            <BooleanToVisibilityConverter/>
-                                        </TemplateBinding.Converter>
+                                        
                                     </TemplateBinding>
                                 </Button.Visibility>
                             </Button>
@@ -326,30 +318,6 @@
             <Label Content ="Chats" Grid.Row="1" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Center" Margin="48,0" Width="63"/>
             <ListBox FontSize="18" FontFamily="Comic Sans MS" x:Name="chatList" Grid.Row="2" SelectionChanged="chatList_SelectionChanged" Margin="0,0,0,0" />
 
-            <Grid Name="advertstring" Grid.Row="3" Visibility="Visible" Margin="0,0,0,-190">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="277*"/>
-                    <RowDefinition Height="163*"/>
-                    <RowDefinition Height="302*"/>
-                    <RowDefinition Height="150*"/>
-                </Grid.RowDefinitions>
-
-                <Button Name="gaminatorBtn" Style="{DynamicResource ButtonStyle2}" Height="Auto" Grid.Row="0" Click="gaminatorBtn_Click">
-                    <MediaElement VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="Resources/87-1.gif" Name="media"  Margin="-21,-6,-20,-8" MediaEnded="media_MediaEnded"/>
-                </Button>
-                <Button Name="vaBankBtn" Style="{DynamicResource ButtonStyle2}" Height="Auto" Grid.Row="1" Click="vaBankBtn_Click">
-                    <MediaElement VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="Resources/168.gif" Name="media1" Margin="-18,-8,-17,-8" MediaEnded="media_MediaEnded"/>
-                </Button>
-                <Button Name="binomoBut" Style="{DynamicResource ButtonStyle2}" Height="Auto" Grid.Row="2" Click="binomoBut_Click">
-                    <MediaElement VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="Resources/96-1.gif" Name="media2" MediaEnded="media_MediaEnded" Margin="-29,-7,-29,-8"/>
-                </Button>
-                <Button Name="moneyBut" Style="{DynamicResource ButtonStyle2}" Height="Auto" Grid.Row="3" Click="moneyBtn_Click" Margin="0,0,0,-4">
-                    <MediaElement VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="Resources/71-1.gif" Name="media3" MediaEnded="media_MediaEnded" Margin="-38,-7,-37,-8"/>
-                </Button>
-
-
-            </Grid>
-
 
         </Grid>
         <Grid Grid.Column="1" x:Name="startGrid" Visibility="Visible">
@@ -413,10 +381,6 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="50"/>
                     </Grid.ColumnDefinitions>
-                    <ToggleButton  Name="advertstringCheck" IsChecked="True" Grid.Column="1"
-                  Style="{StaticResource MaterialDesignSwitchToggleButton}"
-                   RenderTransformOrigin="0.5,0.5" Click="advertstringCheck_Click"/>
-                    <Label FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Реклама</Label>
                 </Grid>
 
             </Grid>

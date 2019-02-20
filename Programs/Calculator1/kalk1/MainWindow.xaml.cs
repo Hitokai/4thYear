@@ -23,13 +23,20 @@ namespace kalk1
     {
         string[] signs = { "*", "/", "+", "-" };
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        //Добавление содержимого кнопок в строку
-        private void button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Добавление содержимого кнопок в строку
+        /// </summary>
+        /// <param name="sender">Объект</param>
+        /// <param name="e">Событие</param>
+        private void clickOnBtn(object sender, RoutedEventArgs e)
         {
             string data = (string)((Button)e.OriginalSource).Content;
             
@@ -37,8 +44,12 @@ namespace kalk1
             
         }
 
-        // Считывание корня числа, при условии, что строка не пустая, и в ней только число, без действий
-        private void korenButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Считывание корня числа, при условии, что строка не пустая, и в ней только число, без действий
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void clickOnKorenBtn(object sender, RoutedEventArgs e)
         {
             if (Convert.ToString(answLabel.Content) != "")
             {
@@ -60,14 +71,22 @@ namespace kalk1
             
         }
 
-        // Очищение строки при нажатии на кнопку C
+        /// <summary>
+        /// Очищение строки при нажатии на кнопку C
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
         private void clrButton(object sender, RoutedEventArgs e)
         {
             answLabel.Content = "";
         }
 
-        //Функция рассчета данных в лейбле
-        private void answButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Функция рассчета данных в лейбле
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void clickOnAnswBtn(object sender, RoutedEventArgs e)
         {
             string st = Convert.ToString(answLabel.Content);
             //Строка разделяется на 2 числа и действие между ними

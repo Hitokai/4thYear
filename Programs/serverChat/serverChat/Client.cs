@@ -16,9 +16,9 @@ namespace serverChat
         private Thread userThread;
 
         /// <summary>
-        /// Функция создания клиента
+        /// Конструктор класса(запускает поток для клиента)
         /// </summary>
-        /// <param Socket="socket"></param>
+        /// <param Socket="socket">Сокет</param>
         public Client(Socket socket)
         {
             // Присваиваем переменной полученный сокет

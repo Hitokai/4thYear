@@ -24,3 +24,10 @@ C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\serverChat\serverChat
 C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\serverChat\serverChat\obj\Debug\serverChat.csprojResolveAssemblyReference.cache
 C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\serverChat\serverChat\obj\Debug\serverChat.exe
 C:\Users\3-104-15\Desktop\kkmt_projects-master\ChatProject\serverChat\serverChat\obj\Debug\serverChat.pdb
+C:\Users\temik\Desktop\serverChat\serverChat\bin\Debug\serverChat.exe.config
+C:\Users\temik\Desktop\serverChat\serverChat\bin\Debug\serverChat.exe
+C:\Users\temik\Desktop\serverChat\serverChat\bin\Debug\serverChat.pdb
+C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.csprojAssemblyReference.cache
+C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.csproj.CoreCompileInputs.cache
+C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.exe
+C:\Users\temik\Desktop\serverChat\serverChat\obj\Debug\serverChat.pdb

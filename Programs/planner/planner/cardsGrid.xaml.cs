@@ -28,6 +28,9 @@ namespace planner
         static Grid newGrid = new Grid(); // Новый Grid для хранения карточек
         static XmlAddRead newXml = new XmlAddRead(); // Экземпляр класса XmlAddRead
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public cardsGrid()
         {
             InitializeComponent();
@@ -56,7 +59,10 @@ namespace planner
             scroll.Content = newGrid;
         }
 
-        // Функция загрузки записей, помещение их в карточки, а затем на Grid
+        /// <summary>
+        /// Функция загрузки записей, помещение их в карточки, а затем на Grid
+        /// </summary>
+        /// <param name="cardCount">Количество карт</param>
         public static void LoadCards(int cardCount)
         {
             newGrid.Children.Clear();
@@ -183,7 +189,11 @@ namespace planner
             }
         }
 
-        // Функция для удаления записей
+        /// <summary>
+        /// Функция для удаления записей
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
         private static void DeleteCard(object sender, RoutedEventArgs e)
         {
             string cardId = (sender as Button).Name.Split('_')[1];
@@ -193,7 +203,12 @@ namespace planner
             LoadCards(newXml.CardsCount);
         }
 
-        // Добавление заголовка и основного текста в карточку
+        /// <summary>
+        /// Добавление заголовка и основного текста в карточку
+        /// </summary>
+        /// <param name="grid">карта</param>
+        /// <param name="len">длина</param>
+        /// <param name="num">номер</param>
         public static void AddTextToHeaderAndLabel(StackPanel grid, string len, int num)
         {
             ScrollViewer innerScrollViewer = new ScrollViewer();
@@ -232,7 +247,11 @@ namespace planner
             }
         }
 
-        // Добавление времени в карточку
+        /// <summary>
+        /// Добавление времени в карточку
+        /// </summary>
+        /// <param name="grid">карта</param>
+        /// <param name="date">дата</param>
         public static void AddTextToTime(StackPanel grid, string date)
         {
             TextBlock innerTextBlock = new TextBlock();
@@ -244,7 +263,11 @@ namespace planner
             grid.Children.Add(innerTextBlock);
         }
 
-        // Добавление разделителей в строку
+        /// <summary>
+        /// Добавление разделителей в строку
+        /// </summary>
+        /// <param name="grid">карта</param>
+        /// <param name="len">длина</param>
         public static void CreateRowDef(Grid grid, string len)
         {
             var miniConverter = new GridLengthConverter();
@@ -254,7 +277,11 @@ namespace planner
             grid.RowDefinitions.Add(miniRow);
         }
 
-        // Добавление разделителей в столбец
+        /// <summary>
+        /// Добавление разделителей в столбец
+        /// </summary>
+        /// <param name="grid">карта</param>
+        /// <param name="len">длина</param>
         public static void CreateColDef(Grid grid, string len)
         {
             var miniConverter = new GridLengthConverter();

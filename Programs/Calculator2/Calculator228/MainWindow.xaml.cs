@@ -13,12 +13,20 @@ namespace Calculator228
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Нажатие на кнопку вычисления
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void clickOnBtn(object sender, RoutedEventArgs e)
         {
             try
             {

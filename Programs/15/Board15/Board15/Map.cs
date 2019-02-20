@@ -11,31 +11,46 @@ namespace Board15
         int size;
         int[,] map;
 
+        /// <summary>
+        /// Создание матрицы с заданными размерами
+        /// </summary>
+        /// <param name="size">Размер поля</param>
         public Map(int size)
         {
-            // Создание матрицы с заданными размерами
             this.size = size;
             map = new int[size, size];
         }
 
+        /// <summary>
+        /// Встасляем значение в матрицу
+        /// </summary>
+        /// <param name="xy">коордиината ху</param>
+        /// <param name="value">значение</param>
         public void Set(Coord xy, int value)
         {
-            // Встасляем значение в матрицу
             if (xy.OnBoard(size))
                 map[xy.x, xy.y] = value;
         }
 
+        /// <summary>
+        /// Забираем значение из матрицы
+        /// </summary>
+        /// <param name="xy">Координата ху</param>
+        /// <returns>значение из матрицы</returns>
         public int Get(Coord xy)
         {
-            // Забираем значение из матрицы
             if (xy.OnBoard(size))
                 return map[xy.x, xy.y];
             return 0;
         }
 
+        /// <summary>
+        /// Меняем блоки (пустой и нужный) местами
+        /// </summary>
+        /// <param name="from">откуда</param>
+        /// <param name="to">куда</param>
         public void Copy(Coord from, Coord to)
-        {
-            // Меняем блоки (пустой и нужный) местами
+        { 
             Set(to, Get(from));
         }
     }

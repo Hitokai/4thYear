@@ -23,7 +23,9 @@ namespace planner
         public List<string> ids = new List<string>();
         public int CardsCount; // Кол-во записей
 
-        // Функция для добавления данных в файл
+        /// <summary>
+        /// Функция для добавления данных в файл
+        /// </summary>
         public void AddCard()
         {
             XmlDocument xDoc = new XmlDocument();
@@ -61,7 +63,9 @@ namespace planner
             xDoc.Save("./Resources/cards.xml");
         }
 
-        // Функция для считавания данных из файла
+        /// <summary>
+        /// Функция для считавания данных из файла
+        /// </summary>
         public void ReadCards()
         {
             labels.Clear();
@@ -108,8 +112,11 @@ namespace planner
 
             CardsCount = xmlLen;
         }
-        
-        // Функция для удаления записи из файла
+
+        /// <summary>
+        /// Функция для удаления записи из файла
+        /// </summary>
+        /// <param name="id">Идентификатор карты</param>
         public void DeleteCard(string id)
         {
             XmlDocument doc = new XmlDocument();

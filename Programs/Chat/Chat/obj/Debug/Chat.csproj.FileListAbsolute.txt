@@ -141,3 +141,34 @@ C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.exe
 C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Chat.pdb
 C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Message.g.cs
 C:\Users\temik\Desktop\Chat\Chat\obj\Debug\Message.baml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csprojAssemblyReference.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Client.g.cs
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Login.g.cs
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Message.g.cs
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Registr.g.cs
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\App.g.cs
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat_MarkupCompile.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat_MarkupCompile.lref
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.exe
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.exe.config
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.exe
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Chat.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Google.Protobuf.dll
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignColors.dll
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MySql.Data.dll
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\Google.Protobuf.xml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\bin\Debug\MySql.Data.xml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\App.baml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Client.baml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Login.baml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Message.baml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Registr.baml
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.g.resources
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.Properties.Resources.resources
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.CoreCompileInputs.cache
+E:\MyGoogleDrive\4 курс\Aref\Programs\Chat\Chat\obj\Debug\Chat.csproj.CopyComplete

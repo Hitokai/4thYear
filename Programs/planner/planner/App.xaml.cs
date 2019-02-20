@@ -29,10 +29,10 @@ namespace planner
             m_Languages.Clear();
             m_Languages.Add(new CultureInfo("en-US")); //Нейтральная культура для этого проекта
             m_Languages.Add(new CultureInfo("ru-RU"));
-            App.LanguageChanged += App_LanguageChanged;
+            App.IsChangedLanguage += App_IsChangedLanguage;
         }
 
-        public static event EventHandler LanguageChanged;
+        public static event EventHandler IsChangedLanguage;
 
         public static CultureInfo Language
         {
@@ -76,7 +76,7 @@ namespace planner
                 }
 
                 //4. Вызываем евент для оповещения всех окон.
-                LanguageChanged(Application.Current, new EventArgs());
+                IsChangedLanguage(Application.Current, new EventArgs());
             }
         }
 
@@ -85,7 +85,7 @@ namespace planner
             Language = planner.Properties.Settings.Default.DefaultLanguage;
         }
 
-        private void App_LanguageChanged(Object sender, EventArgs e)
+        private void App_IsChangedLanguage(Object sender, EventArgs e)
         {
             planner.Properties.Settings.Default.DefaultLanguage = Language;
             planner.Properties.Settings.Default.Save();

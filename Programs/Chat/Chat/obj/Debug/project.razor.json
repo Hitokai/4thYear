@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "e:\\MyGoogleDrive\\4 курс\\Aref\\Programs\\Chat\\Chat\\Chat.csproj",
+  "TargetFramework": "v4.6.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

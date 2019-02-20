@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sudoku"
         mc:Ignorable="d"
-        Title="MainWindow" Height="689.68" Width="582.797">
+        Title="Судоку" Height="689.68" Width="582.797">
     <Grid Margin="0,0,2,0">
         <Grid x:Name="gridBut" Margin="10,10,13,99">
             <Grid.RowDefinitions>

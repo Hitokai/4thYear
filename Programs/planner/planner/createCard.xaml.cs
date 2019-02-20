@@ -22,13 +22,21 @@ namespace planner
     /// </summary>
     public partial class createCard : UserControl
     {
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public createCard()
         {
             InitializeComponent();
         }
 
-        // Добавление записей
-        private void cardAddButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Добавление записей
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void ClickOnAddBtn(object sender, RoutedEventArgs e)
         {
             string headerText = headerBox.Text;
             string contentText = contentTextBox.Text;
@@ -43,8 +51,12 @@ namespace planner
             
         }
 
-        // Обновление содержимого карточки для предпросмотра
-        private void contentTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        /// <summary>
+        /// Обновление содержимого карточки для предпросмотра
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void ChangeContentOnTb(object sender, TextChangedEventArgs e)
         {
             string objName = (string)((TextBox)e.OriginalSource).Name;
             if (objName == "contentTextBox")
@@ -64,7 +76,12 @@ namespace planner
                     cardHeader.Text = headerBox.Text;
         }
 
-        private void dateTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        /// <summary>
+        /// Изменение даты
+        /// </summary>
+        /// <param name="sender">объект</param>
+        /// <param name="e">событие</param>
+        private void ChangeDateValue(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (dateTime.Text.Length == 0)
                 cardDateTime.Text = "Дата и время";
